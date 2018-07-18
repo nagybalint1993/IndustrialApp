@@ -1,0 +1,10 @@
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.exe.config
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.exe
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.pdb
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\IndustrialAppClassLib.dll
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\IndustrialAppClassLib.pdb
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csprojAssemblyReference.cache
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csproj.CoreCompileInputs.cache
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csproj.CopyComplete
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.exe
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.pdb

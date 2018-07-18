@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "bootstrap-4.1.2-dist"
+		},
+		{
+			"path": "images"
+		},
+		{
+			"path": "pages"
+		},
+		{
+			"path": "scripts"
+		},
+		{
+			"path": "test_data"
+		}
+	]
+}

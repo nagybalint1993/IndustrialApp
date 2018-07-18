@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialApp", "IndustrialAppClassLib\IndustrialApp.csproj", "{D91C3A7D-9F68-43A8-8927-F1BDC257DB51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperProject", "HelperProject\HelperProject.csproj", "{F650EC30-E177-43A8-9E08-A748293E355F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D91C3A7D-9F68-43A8-8927-F1BDC257DB51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91C3A7D-9F68-43A8-8927-F1BDC257DB51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91C3A7D-9F68-43A8-8927-F1BDC257DB51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91C3A7D-9F68-43A8-8927-F1BDC257DB51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F650EC30-E177-43A8-9E08-A748293E355F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F650EC30-E177-43A8-9E08-A748293E355F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F650EC30-E177-43A8-9E08-A748293E355F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F650EC30-E177-43A8-9E08-A748293E355F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD85BF93-5391-4DDD-AAB0-449366652DA8}
+	EndGlobalSection
+EndGlobal

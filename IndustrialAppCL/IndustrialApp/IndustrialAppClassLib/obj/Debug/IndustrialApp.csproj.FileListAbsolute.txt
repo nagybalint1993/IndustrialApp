@@ -1,0 +1,6 @@
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\IndustrialAppClassLib.dll
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\IndustrialAppClassLib.pdb
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csprojAssemblyReference.cache
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csproj.CoreCompileInputs.cache
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.dll
+F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.pdb
