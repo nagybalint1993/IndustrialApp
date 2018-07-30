@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using TallboyServer.BLL.Managers;
 
 namespace MyWebServer.Controllers
@@ -22,24 +23,30 @@ namespace MyWebServer.Controllers
             return new TypeManager().GetType(id);
         }
 
-        /*
+        
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post([FromBody]TallboyBLL.Models.Type type)
         {
+            new TypeManager().AddType(type);
+            return Ok();
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(int id, [FromBody]TallboyBLL.Models.Type type)
         {
+            new TypeManager().UpdateType(id, type);
+            return Ok();
         }
 
         // DELETE api/<controller>/5
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            new TypeManager().DeleteType(id);
+            return Ok();
         }
 
-        */
+        
 
     }
 }

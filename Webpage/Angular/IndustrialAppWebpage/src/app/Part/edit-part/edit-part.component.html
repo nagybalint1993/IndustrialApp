@@ -1,0 +1,38 @@
+<h2 class="mt-5 mb-4">Edit parts</h2>
+<div class="table-wrapper-scroll-y table-bordered">
+  <table class="table table-bordered table-striped " >
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let type of types" (click)="OnSelect(type)">
+        <th scope="col">{{type.name}}</th>
+        <th scope="col">{{type.description}}</th>
+        </tr>
+      </tbody>
+
+  </table>
+</div>
+<div class="input-group mb-4 mt-4">
+    <div class="input-group-prepend" >
+      <span class="input-group-text" >Name:</span>
+    </div>
+    <input  type="text"  class="form-control" [(ngModel)]="actualType.name" #partNameTF>
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description:</span>
+    </div>
+    <textarea class="form-control" aria-label="Description" rows="8" [(ngModel)]="actualType.description" #partDescriptionTF></textarea>
+</div>
+<div class="mt-5" > 
+  <button type="button" class="btn btn-primary mr-3" (click)="onEditButtonPressed(partNameTF.value,partDescriptionTF.value)">Edit</button>
+
+  <button type="button" class="btn btn-primary" (click)="onDeleteButtonPressed(partNameTF.value,partDescriptionTF.value)">Delete</button>
+</div>
+
+<label id="testlabel" >{{name}}</label>

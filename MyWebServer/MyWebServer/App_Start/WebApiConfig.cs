@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace TallboyServer
 {
@@ -11,6 +12,8 @@ namespace TallboyServer
     {
         public static void Register(HttpConfiguration config)
         {
+            var corsAttr = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            config.EnableCors(corsAttr);
             // Web API configuration and services
 
             // Web API routes

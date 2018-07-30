@@ -7,10 +7,10 @@
 			"path": "images"
 		},
 		{
-			"path": "pages"
+			"path": "scripts"
 		},
 		{
-			"path": "scripts"
+			"path": "pages"
 		},
 		{
 			"path": "test_data"

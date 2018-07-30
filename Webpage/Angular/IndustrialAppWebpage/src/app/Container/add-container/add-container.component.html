@@ -1,0 +1,20 @@
+<h2 class="mt-5 mb-4">Add new container</h2>
+<div class="input-group mb-4">
+    <div class="input-group-prepend" >
+      <span class="input-group-text" >Name:</span>
+    </div>
+    <input  type="text"  class="form-control" #partNameTF  [(ngModel)]="name">
+</div>
+
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description:</span>
+    </div>
+    <textarea class="form-control" aria-label="Description" rows="8" #partDescriptionTF  [(ngModel)]="description"></textarea>
+</div>
+
+<button type="button" class="btn btn-primary" (click)="onAddButtonPressed(partNameTF.value,partDescriptionTF.value)">Add</button>
+
+<div class="alert alert-success mt-5" id="alert">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>

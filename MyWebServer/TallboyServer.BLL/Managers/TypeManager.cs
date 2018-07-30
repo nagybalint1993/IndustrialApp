@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TallboyBLL.Models;
 using TallboyServer.BLL.Database;
 using TallboyServer.BLL.Exceptions;
 
@@ -24,6 +26,43 @@ namespace TallboyServer.BLL.Managers
                     });
                     ctx.SaveChanges();
                 }
+            }
+        }
+
+        public TallboyBLL.Models.Type AddType(TallboyBLL.Models.Type type)
+        {
+            using (var ctx = new TallboyDBContext())
+            {
+                var newType= ctx.Types.Add(type);
+                ctx.SaveChanges();
+                return newType;
+            }
+        }
+
+        public void DeleteType(int id)
+        {
+            using (var ctx = new TallboyDBContext())
+            {
+                var type = ctx.Types.FirstOrDefault(t => t.Id == id);
+                ctx.Types.Remove(type);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void UpdateType(int id, TallboyBLL.Models.Type newType)
+        {
+            using (var ctx = new TallboyDBContext())
+            {
+                var type = ctx.Types.FirstOrDefault(f => f.Id == id);
+                if (type == null || newType.Id != id)
+                    throw new Exception();
+
+                //ctx.Types.Attach(newType);
+                //ctx.Entry(newType).State = EntityState.Modified;
+
+                type.Name = newType.Name;
+                type.Description = newType.Description;
+                ctx.SaveChanges();
             }
         }
 
