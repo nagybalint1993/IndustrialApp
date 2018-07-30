@@ -23,7 +23,7 @@ export class EditPartComponent implements OnInit {
   }
 
   updateTable(){
-    this.partservice.getTypes().subscribe(types => this.types= types);
+    this.partservice.getAll().subscribe(types => this.types= types);
   }
 
   OnSelect(type){
@@ -34,11 +34,11 @@ export class EditPartComponent implements OnInit {
     if(!name){
       this.toastr.error("Name field can't be empty")
     }
-    this.partservice.putType(this.actualType).subscribe(() => this.updateTable());
+    this.partservice.put(this.actualType).subscribe(() => this.updateTable());
   }
 
   onDeleteButtonPressed(name, description){
-    this.partservice.deleteType(this.actualType.id).subscribe(()=> this.updateTable());
+    this.partservice.delete(this.actualType.id).subscribe(()=> this.updateTable());
     //this.updateTable();
   }
 }

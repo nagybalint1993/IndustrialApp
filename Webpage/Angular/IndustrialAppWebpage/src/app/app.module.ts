@@ -6,15 +6,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AddPartComponent } from './Part/add-part/add-part.component';
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { EditPartComponent } from './Part/edit-part/edit-part.component';
-import { AppConfig } from './app.config';
-import { AddContainerComponent } from './Container/add-container/add-container.component';
-import { EditContainerComponent } from './Container/edit-container/edit-container.component';
-import { AddContainerPartComponent } from './ContainerPart/add-container-part/add-container-part.component';
+import { AppComponent } from '@app/app.component';
+import { NavbarComponent } from '@app/navbar/navbar.component';
+import { AddPartComponent } from '@app/Part/add-part/add-part.component';
+import { AppRoutingModule } from '@app/app-routing/app-routing.module';
+import { EditPartComponent } from '@app/Part/edit-part/edit-part.component';
+import { AppConfig } from '@app/app.config';
+import { AddContainerComponent } from '@app/Container/add-container/add-container.component';
+import { EditContainerComponent } from '@app/Container/edit-container/edit-container.component';
+import { AddContainerPartComponent } from '@app/ContainerPart/add-container-part/add-container-part.component';
+import { provideForRootGuard } from '../../node_modules/@angular/router/src/router_module';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddContainerComponent } from './add-container.component';
+import { AddContainerComponent } from '@app/Container/add-container/add-container.component';
 
 describe('AddContainerComponent', () => {
   let component: AddContainerComponent;

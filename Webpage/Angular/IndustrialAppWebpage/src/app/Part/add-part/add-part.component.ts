@@ -30,7 +30,7 @@ export class AddPartComponent implements OnInit {
         return
       }
       this.type = ( {name:pname, description:pdescription, id:0})
-      this.partservice.postType(this.type).subscribe(()=> this.onTypeAdded());
+      this.partservice.post(this.type).subscribe(()=> this.onTypeAdded());
       console.log("button pressed");
   }
 
@@ -46,7 +46,7 @@ export class AddPartComponent implements OnInit {
   }
 
   updateTable(){
-    this.partservice.getTypes().subscribe(types => this.types= types);
+    this.partservice.getAll().subscribe(types => this.types= types);
     
   }
 

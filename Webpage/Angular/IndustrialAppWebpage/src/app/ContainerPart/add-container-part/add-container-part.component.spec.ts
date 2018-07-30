@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddContainerPartComponent } from './add-container-part.component';
+import { AddContainerPartComponent } from '@app/ContainerPart/add-container-part/add-container-part.component';
 
 describe('AddContainerPartComponent', () => {
   let component: AddContainerPartComponent;
