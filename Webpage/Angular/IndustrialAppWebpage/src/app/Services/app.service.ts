@@ -12,11 +12,9 @@ const httpoption= {
 @Injectable({
   providedIn: 'root'
 })
-export class AppService<T extends Resource> {
-  baseURL:string;
-  serviceURL:string;
+export abstract class AppService<T extends Resource> {
+  constructor( protected http: HttpClient, private baseURL:string, private serviceURL:string) { }
 
-  constructor( private http: HttpClient) { }
 
   getAll() :Observable<T[]>{
     return this.http.get<T[]>(this.baseURL + this.serviceURL, httpoption);
@@ -25,7 +23,7 @@ export class AppService<T extends Resource> {
   put(data:T): Observable<any>{
     console.log("put:" + data.id);
     console.log("URL:" + this.baseURL + this.serviceURL+ data.id );
-    return this.http.put(this.baseURL + this.serviceURL+ data.id , data, httpoption );
+    return this.http.put<T>(this.baseURL + this.serviceURL+ data.id , data, httpoption );
   }
 
   delete(id:Number){
@@ -33,6 +31,6 @@ export class AppService<T extends Resource> {
   }
 
   post(data:T): Observable<any>{
-    return this.http.post(this.baseURL + this.serviceURL, data, httpoption);
+    return this.http.post<T>(this.baseURL + this.serviceURL, data, httpoption);
   }
 }

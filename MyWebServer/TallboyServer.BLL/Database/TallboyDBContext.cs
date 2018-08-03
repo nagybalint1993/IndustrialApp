@@ -10,6 +10,12 @@ namespace TallboyServer.BLL.Database
 {
     class TallboyDBContext : DbContext
     {
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    System.Data.Entity.Database.SetInitializer<TallboyDBContext>(null);
+        //    base.OnModelCreating(modelBuilder);
+        //}
+
         public DbSet<Container> Containers { get; set; }
 
         public DbSet<ContainerPart> ContainerParts { get; set; }

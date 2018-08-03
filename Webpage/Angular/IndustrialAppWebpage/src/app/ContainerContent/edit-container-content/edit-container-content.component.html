@@ -1,0 +1,17 @@
+<h2 class="mt-5 mb-4">Edit container content</h2>
+
+<div class="mb-4">
+  <label>Select the container</label>
+  <div class="form-group">
+      <select class="form-control" (change)="onContainerSelect($event)" >
+        <option *ngFor="let container of containers" [ngValue]="container.id">{{container.name}} </option>
+      </select>
+</div>
+<div class="mb-4">
+  <label>Select the drawer</label>
+  <div class="form-group">
+      <select class="form-control" name="part" [ngModel]="currentContainerPart" (change)="onDrawerSelect($event)">
+        <option *ngFor="let part of parts" [value]="part.id">{{part.name}} [id: {{part.id}} ] </option>
+      </select>
+  </div>
+</div>

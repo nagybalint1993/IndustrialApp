@@ -3,12 +3,8 @@ import {Type} from '@app/models/type'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {AppConfig} from '@app/app.config';
 import { AppService } from '@app/Services/app.service';
+import { Observable } from 'rxjs';
 
-const httpoption= {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-})
-}
 
 @Injectable({
   providedIn: 'root',
@@ -18,11 +14,13 @@ export class PartService extends AppService<Type>{
 
   constructor(  http: HttpClient, private config: AppConfig) {
     super(
-      http
+      http,
+      config.apiUrl,
+      config.typesEndpoint
     );
-    this.serviceURL="types/"
-    this.baseURL=config.apiUrl;
+     
    }
+
 
   // getTypes() :Observable<Type[]>{
   //   return this.http.get<Type[]>(this.config.apiUrl + this.serviceUrl, httpoption);

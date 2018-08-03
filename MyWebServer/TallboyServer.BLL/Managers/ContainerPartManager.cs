@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TallboyBLL.Models;
 using TallboyServer.BLL.Database;
 using TallboyServer.BLL.Exceptions;
 
@@ -23,6 +24,13 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
+        public IEnumerable<ContainerPart> GetContainerPartsByContainerId()
+        {
+            var container= new ContainerPart();
+            container.Name = "faszarépa";
+            return new ContainerPart[] { container };
+        }
+
         public List<TallboyBLL.Models.ContainerPart> GetContainerParts()
         {
             using (var ctx = new TallboyDBContext())
@@ -35,5 +43,16 @@ namespace TallboyServer.BLL.Managers
                 return containerPart;
             }
         }
+
+        public ContainerPart AddContainerPart(ContainerPart containerPart)
+        {
+            using (var ctx = new TallboyDBContext())
+            {
+                var newCp= ctx.ContainerParts.Add(containerPart);
+                ctx.SaveChanges();
+                return newCp;
+            }
+        }
+
     }
 }

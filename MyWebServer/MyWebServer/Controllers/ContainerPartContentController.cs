@@ -28,23 +28,26 @@ namespace MyWebServer.Controllers
             return new ContainerPartContentManager().GetContainerPartContentToType(id);
         }
 
-        /*
+        
 
         // POST: api/ContainerPartContent
-        public void Post([FromBody]string value)
+        public ContainerPartContent Post([FromBody]ContainerPartContent containerPartContent)
         {
+            return new ContainerPartContentManager().AddContent(containerPartContent);
         }
 
         // PUT: api/ContainerPartContent/5
-        public void Put(int id, [FromBody]string value)
+        public ContainerPartContent Put(int id, [FromBody]ContainerPartContent containerPartContent)
         {
+            return new ContainerPartContentManager().UpdateContent(id,containerPartContent);
         }
 
         // DELETE: api/ContainerPartContent/5
-        public void Delete(int id)
+        public ContainerPartContent Delete(int id)
         {
+            return new ContainerPartContentManager().DeleteContent(id);
         }
 
-        */
+        
     }
 }

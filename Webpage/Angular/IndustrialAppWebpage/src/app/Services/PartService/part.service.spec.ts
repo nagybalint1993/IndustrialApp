@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { PartService } from '@app/Services/part.service';
+import { PartService } from '@app/Services/PartService/part.service';
 
 describe('PartService', () => {
   beforeEach(() => {

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 import { AppComponent } from '@app/app.component';
 import { NavbarComponent } from '@app/navbar/navbar.component';
@@ -15,7 +16,15 @@ import { AppConfig } from '@app/app.config';
 import { AddContainerComponent } from '@app/Container/add-container/add-container.component';
 import { EditContainerComponent } from '@app/Container/edit-container/edit-container.component';
 import { AddContainerPartComponent } from '@app/ContainerPart/add-container-part/add-container-part.component';
-import { provideForRootGuard } from '../../node_modules/@angular/router/src/router_module';
+import { provideForRootGuard } from '@angular/router/src/router_module';
+import { PartService } from '@app/Services/PartService/part.service';
+import { ContainerService } from '@app/Services/ContainerService/container.service';
+import { AddContainerContentComponent } from '@app/ContainerContent/add-container-content/add-container-content.component';
+import { EditContainerContentComponent } from '@app/ContainerContent/edit-container-content/edit-container-content.component';
+import { AddProcessComponent } from '@app/Process/add-process/add-process.component';
+import { EditProcessComponent } from '@app/Process/edit-process/edit-process.component';
+import { ContainercontentService } from '@app/Services/ContainerContentService/containercontent.service';
+import { ContainerPartService } from '@app/Services/ContainerPartService/container-part.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +34,11 @@ import { provideForRootGuard } from '../../node_modules/@angular/router/src/rout
     EditPartComponent,
     AddContainerComponent,
     EditContainerComponent,
-    AddContainerPartComponent
+    AddContainerPartComponent,
+    AddContainerContentComponent,
+    EditContainerContentComponent,
+    AddProcessComponent,
+    EditProcessComponent
   ],
   imports: [
     BrowserModule,
@@ -34,10 +47,15 @@ import { provideForRootGuard } from '../../node_modules/@angular/router/src/rout
     FormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularDraggableModule
   ],
   providers: [
     AppConfig,
+    PartService,
+    ContainerService,
+    ContainercontentService,
+    ContainerPartService
   ],
   bootstrap: [AppComponent]
 })

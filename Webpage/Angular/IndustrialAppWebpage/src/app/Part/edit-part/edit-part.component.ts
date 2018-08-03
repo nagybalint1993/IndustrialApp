@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{Type} from '@app/models/type';
-import { PartService } from '@app/Services/part.service';
+import { PartService } from '@app/Services/PartService/part.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

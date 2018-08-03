@@ -17,6 +17,12 @@ namespace MyWebServer.Controllers
             return new ContainerPartManager().GetContainerParts();
         }
 
+        [HttpGet]
+        public IEnumerable<ContainerPart> ByContainerId()
+        {
+            return new ContainerPartManager().GetContainerPartsByContainerId();
+        }
+
         // GET: api/ContainerPart/5
         public ContainerPart Get(int id)
         {
@@ -24,8 +30,9 @@ namespace MyWebServer.Controllers
         }
 
         // POST: api/ContainerPart
-        public void Post([FromBody]string value)
+        public ContainerPart Post([FromBody]ContainerPart containerPart)
         {
+            return new ContainerPartManager().AddContainerPart(containerPart);
         }
 
         // PUT: api/ContainerPart/5
