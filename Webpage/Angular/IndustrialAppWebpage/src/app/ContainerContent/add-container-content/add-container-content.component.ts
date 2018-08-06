@@ -7,6 +7,7 @@ import {ContainerPart} from '@app/models/containerpart'
 import { ContainerPartService } from '@app/Services/ContainerPartService/container-part.service';
 import { Type } from '@app/models/type';
 import { ContainerContent } from '@app/models/containerContent';
+import { ToastrService } from '../../../../node_modules/ngx-toastr';
 
 @Component({
   selector: 'app-add-container-content',
@@ -25,7 +26,7 @@ export class AddContainerContentComponent implements OnInit {
   currentContainerPartID:number;
 
   constructor( private containerService:ContainerService,private containerPartService:ContainerPartService,
-     private containerContentService:ContainercontentService, private typeService:PartService) 
+     private containerContentService:ContainercontentService, private typeService:PartService,private toastr: ToastrService) 
     {
 
     }
@@ -64,5 +65,6 @@ export class AddContainerContentComponent implements OnInit {
     this.amount=0;
     this.currentContainerPartID=null;
     this.currentTypeID=null;
+    this.toastr.success("Content added!")
   }
 }

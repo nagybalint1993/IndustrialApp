@@ -12,27 +12,33 @@ namespace MyWebServer.Controllers
     public class TypesController : ApiController
     {
         // GET api/<controller>
+        //[HttpGet]
         public IEnumerable<TallboyBLL.Models.Type> Get()
         {
             return new TypeManager().GetTypeList();
         }
 
         // GET api/<controller>/5
+        [HttpGet]
         public TallboyBLL.Models.Type Get(int id)
         {
             return new TypeManager().GetType(id);
         }
 
-        
+
 
         // POST api/<controller>
-        public IHttpActionResult Post([FromBody]TallboyBLL.Models.Type type)
+        [Route("")]
+        [HttpPost]
+        public TallboyBLL.Models.Type Post([FromBody]TallboyBLL.Models.Type type)
         {
-            new TypeManager().AddType(type);
-            return Ok();
+
+            return new TypeManager().AddType(type);
         }
 
         // PUT api/<controller>/5
+        [Route("")]
+        [HttpPut]
         public IHttpActionResult Put(int id, [FromBody]TallboyBLL.Models.Type type)
         {
             new TypeManager().UpdateType(id, type);
@@ -40,6 +46,8 @@ namespace MyWebServer.Controllers
         }
 
         // DELETE api/<controller>/5
+        [Route("")]
+        [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
             new TypeManager().DeleteType(id);

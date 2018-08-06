@@ -7,6 +7,7 @@ import {ContainerPart} from '@app/models/containerpart'
 import { ContainerPartService } from '@app/Services/ContainerPartService/container-part.service';
 import { Type } from '@app/models/type';
 import { ContainerContent } from '@app/models/containerContent';
+import { ToastrService } from '../../../../node_modules/ngx-toastr';
 
 @Component({
   selector: 'app-edit-container-content',
@@ -19,7 +20,7 @@ export class EditContainerContentComponent implements OnInit {
   parts: ContainerPart[]
 
   constructor( private containerService:ContainerService,private containerPartService:ContainerPartService,
-    private containerContentService:ContainercontentService, private typeService:PartService)  { }
+    private containerContentService:ContainercontentService, private typeService:PartService,private toastr: ToastrService)  { }
 
   ngOnInit() {
     this.containerService.getAll().subscribe(c => this.containers=c)

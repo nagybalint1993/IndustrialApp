@@ -78,11 +78,12 @@ E:\TallBoy\git\Tallboy\webserver\MyWebServer\TallboyServer.BLL\obj\Debug\Tallboy
 E:\TallBoy\git\Tallboy\webserver\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csproj.CoreCompileInputs.cache
 E:\TallBoy\git\Tallboy\webserver\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.dll
 E:\TallBoy\git\Tallboy\webserver\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.pdb
+F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.SqlServer.dll
+F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\TallboyServer.BLL.dll.config
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\TallboyServer.BLL.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\TallboyServer.BLL.pdb
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.dll
-F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.SqlServer.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\Microsoft.Web.XmlTransform.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\Newtonsoft.Json.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Commands.dll
@@ -98,7 +99,6 @@ F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.ProjectModel.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Protocol.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Resolver.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Versioning.dll
-F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\EntityFramework.SqlServer.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\Newtonsoft.Json.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Commands.xml
@@ -114,8 +114,8 @@ F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.ProjectModel.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Protocol.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Resolver.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Versioning.xml
-F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csprojAssemblyReference.cache
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csproj.CoreCompileInputs.cache
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csproj.CopyComplete
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.pdb
+F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csprojAssemblyReference.cache

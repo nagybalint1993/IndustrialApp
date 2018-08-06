@@ -15,3 +15,21 @@
       </select>
   </div>
 </div>
+
+<div class="table-wrapper-scroll-y table-bordered">
+  <table class="table table-bordered table-striped " >
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let type of types" (click)="OnSelect(type)">
+        <th scope="col">{{type.name}}</th>
+        <th scope="col">{{type.description}}</th>
+        </tr>
+      </tbody>
+
+  </table>
+</div>

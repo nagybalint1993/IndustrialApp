@@ -182,7 +182,9 @@ F:\IndustrialApp\MyWebServer\MyWebServer\bin\Microsoft.CodeDom.Providers.DotNetC
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\Microsoft.Web.Infrastructure.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\Newtonsoft.Json.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Net.Http.Formatting.dll
+F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Cors.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Helpers.dll
+F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.Cors.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.WebHost.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Mvc.dll
@@ -198,10 +200,11 @@ F:\IndustrialApp\MyWebServer\MyWebServer\bin\TallboyServer.BLL.dll.config
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\EntityFramework.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\EntityFramework.SqlServer.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\IndustrialApp\MyWebServer\MyWebServer\bin\Newtonsoft.Json.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Net.Http.Formatting.xml
-F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Helpers.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.xml
+F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.Cors.xml
+F:\IndustrialApp\MyWebServer\MyWebServer\bin\Newtonsoft.Json.xml
+F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Helpers.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.WebHost.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Mvc.xml
 F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Optimization.xml
@@ -220,6 +223,3 @@ F:\IndustrialApp\MyWebServer\MyWebServer\obj\Debug\TallboyServer.csproj.CoreComp
 F:\IndustrialApp\MyWebServer\MyWebServer\obj\Debug\TallboyServer.csproj.CopyComplete
 F:\IndustrialApp\MyWebServer\MyWebServer\obj\Debug\MyWebServer.dll
 F:\IndustrialApp\MyWebServer\MyWebServer\obj\Debug\MyWebServer.pdb
-F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Cors.dll
-F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.Cors.dll
-F:\IndustrialApp\MyWebServer\MyWebServer\bin\System.Web.Http.Cors.xml
