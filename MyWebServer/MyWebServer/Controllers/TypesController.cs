@@ -9,6 +9,7 @@ using TallboyServer.BLL.Managers;
 
 namespace MyWebServer.Controllers
 {
+    
     public class TypesController : ApiController
     {
         // GET api/<controller>
@@ -25,19 +26,14 @@ namespace MyWebServer.Controllers
             return new TypeManager().GetType(id);
         }
 
-
-
         // POST api/<controller>
-        [Route("")]
         [HttpPost]
         public TallboyBLL.Models.Type Post([FromBody]TallboyBLL.Models.Type type)
         {
-
             return new TypeManager().AddType(type);
         }
 
         // PUT api/<controller>/5
-        [Route("")]
         [HttpPut]
         public IHttpActionResult Put(int id, [FromBody]TallboyBLL.Models.Type type)
         {
@@ -46,7 +42,6 @@ namespace MyWebServer.Controllers
         }
 
         // DELETE api/<controller>/5
-        [Route("")]
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
