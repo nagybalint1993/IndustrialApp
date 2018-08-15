@@ -1,11 +1,11 @@
 import { Resource } from "@app/models/resource";
 
 export class ContainerPart extends Resource{
-    ContainerId:number;
-    Name: string;
-    XCoordinate: number;
-    YCoordinate: number;
-    Width: number;
-    Height: number;
+    containerId:number;
+    name: string;
+    xCoordinate: number;
+    yCoordinate: number;
+    width: number;
+    height: number;
     
 }

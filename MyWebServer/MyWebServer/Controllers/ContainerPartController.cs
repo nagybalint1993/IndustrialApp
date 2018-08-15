@@ -18,7 +18,7 @@ namespace MyWebServer.Controllers
         }
 
         [HttpGet]
-        [Route("api/containerpart/ByContainerId/{id}")]
+        [Route("api/containerpart/ByContainerId/{id:int}")]
         public IEnumerable<ContainerPart> ByContainerId(int id)
         {
             return new ContainerPartManager().GetContainerPartsByContainerId(id);

@@ -4,7 +4,8 @@
   <label>Select the container</label>
   <div class="form-group">
       <select class="form-control" (change)="onContainerSelect($event)" >
-        <option *ngFor="let container of containers" [ngValue]="container.id">{{container.name}} </option>
+        <option disabled> Select container</option>
+        <option *ngFor="let container of containers" [value]="container.id">{{container.name}} </option>
       </select>
 </div>
 <div class="mb-4">
@@ -20,16 +21,36 @@
   <table class="table table-bordered table-striped " >
       <thead class="thead-dark">
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
+            <th scope="col">Part</th>
+            <th scope="col">Amount</th>
           </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let type of types" (click)="OnSelect(type)">
-        <th scope="col">{{type.name}}</th>
-        <th scope="col">{{type.description}}</th>
+        <tr *ngFor="let content of contents" (click)="onSelect(content.id, content.typeId, content.typeName, content.amount ,content.ContainerPartId)" >
+        <th scope="col">{{content.typeName}}</th>
+        <th scope="col">{{content.amount}}</th>
         </tr>
       </tbody>
 
   </table>
 </div>
+
+<div class="mt-3" *ngIf="editable">
+    <div class="mb-4">
+        <label>Part</label>
+        <div class="form-group">
+            <select class="form-control" name="type" (change)="onTypeSelect($event)">
+              <option *ngFor="let type of types" [value]="type" selected="currentTypeId==type.id">{{type.name}} </option>         
+            </select>
+        </div>
+      </div>
+
+      <div class="mb-4">
+          <label class="mr-3">Amount:</label>
+          <div class="form-group">
+            <input  type="number"  class="form-control"  value="amount">
+          </div>
+      </div>
+      <button type="button" class="btn btn-primary"> Edit</button>
+      <button type="button" class="btn btn-primary"> Delete</button>
+  </div>

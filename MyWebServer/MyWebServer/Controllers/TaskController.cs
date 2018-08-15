@@ -18,24 +18,27 @@ namespace TallboyServer.Controllers
         }
 
         // GET api/Task/5
-        public string Get(int id)
+        public Task Get(int id)
         {
-            return "value";
+            return new TaskManager().GetTask(id);
         }
 
         // POST api/Task
-        public void Post([FromBody]string value)
+        public Task Post([FromBody]Task task)
         {
+            return new TaskManager().AddTask(task);
         }
 
         // PUT api/Task/5
-        public void Put(int id, [FromBody]string value)
+        public Task Put(int id, [FromBody]Task task)
         {
+            return new TaskManager().UpdateTask(id,task);
         }
 
         // DELETE api/Task/5
-        public void Delete(int id)
+        public Task Delete(int id)
         {
+            return new TaskManager().DeleteTask(id);
         }
     }
 }

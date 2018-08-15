@@ -4,7 +4,7 @@
   <label>Select the container</label>
   <div class="form-group">
       <select class="form-control" (change)="onContainerSelect($event)" >
-        <option *ngFor="let container of containers" [ngValue]="container.id">{{container.name}} </option>
+        <option *ngFor="let container of containers" [value]="container.id">{{container.name}} </option>
       </select>
 </div>
 <div class="mb-4">
@@ -24,11 +24,11 @@
     </div>
   </div>
 
-  <div class="mb-4">
-      <label class="mr-3">Amount:</label>
-      <div class="form-group">
-        <input  type="number"  class="form-control"  [ngModel]="amount">
+  <div class="input-group mb-4">
+      <div class="input-group-prepend">
+          <span class="input-group-text">Amount:</span>
       </div>
+      <input  type="number"  class="form-control"  [ngModel]="amount">
   </div>
 
   <button type="button" class="btn btn-primary" (click)="onAddButtonPressed()">Add</button>

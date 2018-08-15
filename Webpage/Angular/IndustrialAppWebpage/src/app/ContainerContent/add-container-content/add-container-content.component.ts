@@ -54,9 +54,9 @@ export class AddContainerContentComponent implements OnInit {
 
   onAddButtonPressed(){
     var content= new ContainerContent();
-    content.Amount= this.amount;
-    content.ContainerPartId= this.currentContainerPartID;
-    content.TypeId= this.currentTypeID;
+    content.amount= this.amount;
+    content.containerPartId= this.currentContainerPartID;
+    content.typeId= this.currentTypeID;
     console.log("Add");
     this.containerContentService.post(content).subscribe(()=> this.onContentAdded())
   }

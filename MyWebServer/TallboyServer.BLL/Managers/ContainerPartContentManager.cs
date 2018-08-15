@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TallboyBLL.Models;
 using TallboyServer.BLL.Database;
+using TallboyServer.BLL.DTO;
 using TallboyServer.BLL.Exceptions;
 
 namespace TallboyServer.BLL.Managers
@@ -60,7 +61,39 @@ namespace TallboyServer.BLL.Managers
                 return cpc;
             }
         }
-    
+
+        public List<ContentWithNameDTO> getContentWithNameToPart(int id)
+        {
+            using (var ctx = new TallboyDBContext())
+            {
+                List<ContentWithNameDTO> contentsWithName= new List<ContentWithNameDTO>();
+
+                var content= ctx.ContainerPartContents.Where(c => c.Id == id);
+                if (content == null)
+                    throw new Exception("There isn't content in the database with the given id.");
+
+                foreach(var c in content)
+                {
+                    var cwNameDto = new ContentWithNameDTO();
+                    cwNameDto.ContainerPartId = c.ContainerPartId;
+                    
+                    cwNameDto.Amount = c.Amount;
+                    cwNameDto.id = c.Id;
+
+                    var type = ctx.Types.FirstOrDefault(t => t.Id == c.TypeId);
+                    if (type != null)
+                    {
+                        cwNameDto.TypeId = type.Id;
+                        cwNameDto.TypeName = type.Name;
+                    }
+
+                    contentsWithName.Add(cwNameDto);
+                }
+
+                return contentsWithName;
+
+            }
+        }
 
         public ContainerPartContent DeleteContent(int id)
         {

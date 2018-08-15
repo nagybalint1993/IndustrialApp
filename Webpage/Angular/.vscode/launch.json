@@ -8,7 +8,6 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/IndustrialAppWebpage\\src\\app\\Part\\add-part\\add-part.component.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]

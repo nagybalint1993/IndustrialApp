@@ -1,0 +1,62 @@
+<h2 class="mt-5 mb-4">Add new step</h2>
+
+<h5 class="mb-3"> <b>Process:</b> {{process.name}}</h5>
+<h5>Steps:</h5>
+<div class="table-wrapper-scroll-y table-bordered" *ngIf="enableTable">
+  <table class="table table-bordered table-striped " >
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Order</th>
+            <th scope="col">Part needed</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let step of steps">
+          <th scope="col">{{step.name}}</th>
+          <th scope="col">{{step.description}}</th>
+          <th scope="col">{{step.order}}</th>
+          <th scope="col">{{step.typeName}}</th>
+        </tr>
+      </tbody>
+  </table>
+</div>
+<div class="alert alert-info" *ngIf="!enableTable">
+  There aren't any steps yet.
+</div>
+
+<form >
+  <div class="input-group mt-4 mb-4">
+    <div class="input-group-prepend" >
+      <span class="input-group-text" >Name:</span>
+    </div>
+    <input  type="text"  class="form-control" #stepNameTF  [(ngModel)]="name" name="name">
+  </div>
+
+  <div class="input-group mb-4">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description:</span>
+    </div>
+    <textarea class="form-control" aria-label="Description" rows="8" #stepDescriptionTF  [(ngModel)]="description" name="description"></textarea>
+  </div>
+  <div class="input-group mb-4">
+      <div class="input-group-prepend">
+          <span class="input-group-text">Order:</span>
+      </div>
+      <input  type="number"  class="form-control"  [(ngModel)]="order" name="order" #stepOrder>
+  </div>
+
+  <div class="input-group mb-4">
+      <div class="input-group-prepend ">
+          <span class="input-group-text ">Part:</span>
+      </div>
+          <select class="form-control " name="type" (change)="onTypeSelect($event)">
+              <option disabled> Select part</option>
+            <option *ngFor="let type of types" [value]="type.id">{{type.name}} </option>         
+          </select>
+    </div>
+  <button type="submit" class="btn btn-primary" (click)="onAddButtonPressed()">Add</button>
+
+</form>
+

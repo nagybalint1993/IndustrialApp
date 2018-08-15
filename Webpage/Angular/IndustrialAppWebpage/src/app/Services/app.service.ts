@@ -20,6 +20,10 @@ export abstract class AppService<T extends Resource> {
     return this.http.get<T[]>(this.baseURL + this.serviceURL, httpoption);
   }
 
+  get(id:number):Observable<T>{
+    return this.http.get<T>(this.baseURL + this.serviceURL + id, httpoption)
+  }
+
   put(data:T): Observable<any>{
     console.log("put:" + data.id);
     console.log("URL:" + this.baseURL + this.serviceURL+ data.id );
@@ -30,7 +34,7 @@ export abstract class AppService<T extends Resource> {
     return this.http.delete(this.baseURL + this.serviceURL+ id , httpoption);
   }
 
-  post(data:T): Observable<any>{
+  post(data:T): Observable<T>{
     return this.http.post<T>(this.baseURL + this.serviceURL, data, httpoption);
   }
 }

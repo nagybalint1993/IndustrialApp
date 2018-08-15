@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\TallboyDBContext.cs" />
+    <Compile Include="DTO\ContentWithNameDTO.cs" />
+    <Compile Include="DTO\StepWithName.cs" />
     <Compile Include="Exceptions\TallboyServerException.cs" />
     <Compile Include="Managers\ContainerManager.cs" />
     <Compile Include="Managers\ContainerPartContentManager.cs" />

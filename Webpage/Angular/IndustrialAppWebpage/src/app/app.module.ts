@@ -25,6 +25,10 @@ import { AddProcessComponent } from '@app/Process/add-process/add-process.compon
 import { EditProcessComponent } from '@app/Process/edit-process/edit-process.component';
 import { ContainercontentService } from '@app/Services/ContainerContentService/containercontent.service';
 import { ContainerPartService } from '@app/Services/ContainerPartService/container-part.service';
+import { AddStepComponent } from './Pages/Step/add-step/add-step.component';
+import { EditStepComponent } from './Pages/Step/edit-step/edit-step.component';
+import { StepService } from '@app/Services/StepService/step.service';
+import { ProcessService } from '@app/Services/ProcessService/process.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { ContainerPartService } from '@app/Services/ContainerPartService/contain
     AddContainerContentComponent,
     EditContainerContentComponent,
     AddProcessComponent,
-    EditProcessComponent
+    EditProcessComponent,
+    AddStepComponent,
+    EditStepComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,9 @@ import { ContainerPartService } from '@app/Services/ContainerPartService/contain
     PartService,
     ContainerService,
     ContainercontentService,
-    ContainerPartService
+    ContainerPartService,
+    StepService,
+    ProcessService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,5 +9,13 @@ export class AppConfig {
 
     public readonly partEndpoint ='containerpart/'
 
-    public readonly getPartsToContainerEndpoint='containerpart/ByContainerId'
+    public readonly stepEndpoint = 'taskElement/'
+
+    public readonly processEndpoint= 'task/'
+
+    public readonly getPartsToContainerEndpoint='containerpart/ByContainerId/'
+
+    public readonly getContentWithNameToPartEndPoint="containerpartcontent/listWithName/"
+
+    public readonly getStepsToTaskEndpoint="taskElement/getStepsToTask/"
 }

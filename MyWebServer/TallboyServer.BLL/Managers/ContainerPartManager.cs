@@ -24,11 +24,11 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public IEnumerable<ContainerPart> GetContainerPartsByContainerId(int id)
+        public List<ContainerPart> GetContainerPartsByContainerId(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
-                var container = ctx.ContainerParts.Where(p => p.ContainerId == id);
+                var container = ctx.ContainerParts.Where(p => p.ContainerId == id).ToList();
                 return container;
             }
                 

@@ -1,3 +1,21 @@
-<p>
-  add-process works!
-</p>
+<div *ngIf="!processFilled">
+  <h2 class="mt-5 mb-4">Add new process</h2>
+  <div class="input-group mb-4">
+    <div class="input-group-prepend" >
+      <span class="input-group-text" >Name:</span>
+    </div>
+    <input  type="text"  class="form-control" #processNameTF  [(ngModel)]="name">
+  </div>
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Description:</span>
+    </div>
+    <textarea class="form-control" aria-label="Description" rows="8" #processDescriptionTF  [(ngModel)]="description"></textarea>
+  </div>
+
+  <button type="button mb-5" class="btn btn-primary" (click)="onProcessAddButtonPressed(processNameTF.value,processDescriptionTF.value)">Add</button>
+
+</div>
+
+<app-add-step [process]="process" *ngIf="processFilled"></app-add-step>

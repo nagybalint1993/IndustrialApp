@@ -9,6 +9,8 @@ import {EditContainerContentComponent} from '@app/ContainerContent/edit-containe
 import {AddProcessComponent} from '@app/Process/add-process/add-process.component'
 import {EditProcessComponent} from '@app/Process/edit-process/edit-process.component'
 
+import{AddStepComponent} from '@app/Pages/Step/add-step/add-step.component'
+
 const routes: Routes = [
   { path: 'AddPart', component: AddPartComponent },
   { path: 'EditPart', component: EditPartComponent },
@@ -18,6 +20,7 @@ const routes: Routes = [
   {path: 'EditContainerContent', component: EditContainerContentComponent},
   {path: 'AddProcess', component: AddProcessComponent},
   {path: 'EditProcess', component: EditProcessComponent},
+  {path: 'AddStep', component: AddStepComponent}
 ];
 
 @NgModule({

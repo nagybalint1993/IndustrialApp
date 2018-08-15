@@ -1,3 +1,37 @@
-<p>
-  edit-process works!
-</p>
+<button class="btn btn-primary mt-5" *ngIf="editStepSelected" (click)="onBackButtonPressed()" style="float: right;">Back</button>
+<div *ngIf="!editStepSelected">
+    <h2 class="mt-5 mb-4">Edit process</h2>
+  <div class="input-group mb-4">
+    <div class="input-group-prepend ">
+        <span class="input-group-text ">Process:</span>
+    </div>
+        <select class="form-control " name="process" (change)="onProcessSelect($event)">
+          <option disabled> Select process</option>
+          <option *ngFor="let proc of processes" [value]="proc.id">{{proc.name}} </option>         
+        </select>
+  </div>
+  <div>
+
+
+  </div>
+  <div *ngIf="processSelected">
+    <div class="input-group mb-4">
+      <div class="input-group-prepend" >
+        <span class="input-group-text" >Name:</span>
+      </div>
+      <input  type="text"  class="form-control" #processNameTF  [(ngModel)]="name">
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description:</span>
+      </div>
+      <textarea class="form-control" aria-label="Description" rows="8" #processDescriptionTF  [(ngModel)]="description"></textarea>
+    </div>
+    <div class="mx-auto">
+      <button type="button" class="btn btn-primary mr-4 col-2" (click)="onSaveButtonPressed(processNameTF.value,processDescriptionTF.value)">Save</button>
+      <button type="button" class="btn btn-primary mr-4 col-2" (click)="onDeleteButtonPressed()"> Delete</button>
+      <button type="button" class="btn btn-primary col-2" (click)="onEditStepsButtonPressed()"> Edit steps</button>
+    </div>
+  </div>
+</div>
+<app-edit-step [process]="currentProcess" *ngIf="editStepSelected"></app-edit-step>

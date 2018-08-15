@@ -114,8 +114,8 @@ F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.ProjectModel.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Protocol.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Resolver.xml
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\bin\Debug\NuGet.Versioning.xml
+F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csprojAssemblyReference.cache
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csproj.CoreCompileInputs.cache
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csproj.CopyComplete
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.dll
 F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.pdb
-F:\IndustrialApp\MyWebServer\TallboyServer.BLL\obj\Debug\TallboyServer.BLL.csprojAssemblyReference.cache

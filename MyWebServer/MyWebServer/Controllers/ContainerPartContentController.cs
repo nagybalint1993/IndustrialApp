@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using TallboyBLL.Models;
+using TallboyServer.BLL.DTO;
 using TallboyServer.BLL.Managers;
 
 namespace MyWebServer.Controllers
@@ -46,6 +47,13 @@ namespace MyWebServer.Controllers
         public ContainerPartContent Delete(int id)
         {
             return new ContainerPartContentManager().DeleteContent(id);
+        }
+
+        [HttpGet]
+        [Route("api/containerpartcontent/listWithName/{id}")]
+        public IEnumerable<ContentWithNameDTO> getContentWithNameToPart(int id)
+        {
+            return new ContainerPartContentManager().getContentWithNameToPart(id);
         }
 
         

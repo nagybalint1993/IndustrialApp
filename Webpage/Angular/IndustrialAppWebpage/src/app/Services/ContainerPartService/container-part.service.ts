@@ -5,6 +5,13 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ContainerPart } from '@app/models/containerpart';
 
+
+const httpoption= {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+})
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,12 +21,12 @@ export class ContainerPartService extends AppService<ContainerPart>{
     super(
       http,
       config.apiUrl,
-      config.typesEndpoint
+      config.partEndpoint
     );
   }
 
   getPartsToContainer(id:number):Observable<ContainerPart[]>{
-    return this.http.get<ContainerPart[]>(this.config.apiUrl + this.config.getPartsToContainerEndpoint)
+    return this.http.get<ContainerPart[]>(this.config.apiUrl + this.config.getPartsToContainerEndpoint + id,httpoption )
  }
 
 }

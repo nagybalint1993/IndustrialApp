@@ -12,7 +12,7 @@ namespace TallboyServer
     {
         public static void Register(HttpConfiguration config)
         {
-            var corsAttr = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(corsAttr);
             // Web API configuration and services
 

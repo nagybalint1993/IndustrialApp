@@ -8,6 +8,7 @@ import { ContainerPartService } from '@app/Services/ContainerPartService/contain
 import { Type } from '@app/models/type';
 import { ContainerContent } from '@app/models/containerContent';
 import { ToastrService } from '../../../../node_modules/ngx-toastr';
+import { ContentWithName } from '@app/models/contentWithName';
 
 @Component({
   selector: 'app-edit-container-content',
@@ -15,9 +16,18 @@ import { ToastrService } from '../../../../node_modules/ngx-toastr';
   styleUrls: ['./edit-container-content.component.css']
 })
 export class EditContainerContentComponent implements OnInit {
-  containers:Container[]
+  containers:Container[];
   currentContainerPartID:number;
-  parts: ContainerPart[]
+  currentTypeId:number;
+  parts: ContainerPart[];
+  contents:ContentWithName[];
+  types:Type[]
+
+  editable:boolean=false;
+  amount:number;
+
+  currentContentId:number;
+  currentContainerContent:ContainerContent;
 
   constructor( private containerService:ContainerService,private containerPartService:ContainerPartService,
     private containerContentService:ContainercontentService, private typeService:PartService,private toastr: ToastrService)  { }
@@ -35,6 +45,25 @@ export class EditContainerContentComponent implements OnInit {
   onDrawerSelect(event){
     this.currentContainerPartID= event.target.value
     console.log("Drawer select: " + this.currentContainerPartID)
+    this.containerContentService.getContentWithNameToPart(this.currentContainerPartID).subscribe(c => this.contents= c);
+    
   }
 
+  onSelect(id, typeid, typename, amount, partId){
+    this.typeService.getAll().subscribe(t=> this.types= t);
+    this.currentTypeId=typeid;
+    
+    console.log("OnSelect, TypeId:"+ this.currentTypeId)
+    console.log("id: "+ id);
+    console.log("Amount: "+ amount);
+    console.log("ContainerPArtId: " + partId);
+    console.log();
+    this.currentContainerContent= new ContainerContent();
+    this.currentContainerContent.id=id
+    this.currentContainerContent.amount=amount
+    this.currentContainerContent.containerPartId=partId;
+    this.amount=amount;
+
+    this.editable=true;
+  }
 }
