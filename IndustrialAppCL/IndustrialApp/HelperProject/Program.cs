@@ -1,10 +1,11 @@
-﻿using IndustrialApp.Presenter;
+﻿using IndustrialApp.Models;
+using IndustrialApp.Network.Providers;
+using IndustrialApp.Presenter;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace HelperProject
 {
@@ -12,18 +13,18 @@ namespace HelperProject
     {
         static void Main(string[] args)
         {
-            Presenter presenter = Presenter.GetPresenter();
-            presenter.Start();
+            TaskProvider taskProvider = new TaskProvider("task/");
+            var x= taskProvider.GetListAsync(ListTasks).Result;
+        }
 
-            Debug.WriteLine(presenter.currentTaskElement.TypeId);
-            presenter.TaskElementDone();
 
-            Debug.WriteLine(presenter.currentTaskElement.TypeId);
-            presenter.TaskElementDone();
 
-            Debug.WriteLine(presenter.currentTaskElement.TypeId);
-            presenter.TaskElementDone();
-
+        public static void ListTasks(List<Task> tasks)
+        {
+            foreach(Task t in tasks)
+            {
+                Debug.WriteLine(t.Name);
+            }
         }
     }
 }

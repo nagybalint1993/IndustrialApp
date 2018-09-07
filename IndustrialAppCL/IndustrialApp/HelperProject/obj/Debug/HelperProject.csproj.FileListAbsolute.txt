@@ -8,3 +8,15 @@ F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperP
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csproj.CopyComplete
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.exe
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csprojAssemblyReference.cache
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csproj.CoreCompileInputs.cache
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.exe
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.exe.config
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.exe
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\HelperProject.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\IndustrialAppClassLib.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\Newtonsoft.Json.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\IndustrialAppClassLib.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\bin\Debug\Newtonsoft.Json.xml
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\HelperProject\obj\Debug\HelperProject.csproj.CopyComplete
