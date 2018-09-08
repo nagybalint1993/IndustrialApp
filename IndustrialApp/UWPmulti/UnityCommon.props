@@ -1,0 +1,10 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <UnityWSASolutionName>IndustrialApp</UnityWSASolutionName>
+        <UnityWSASolutionDir>F:\IndustrialApp\IndustrialApp\UWPmulti\</UnityWSASolutionDir>
+        <UnityProjectDir>F:\IndustrialApp\IndustrialApp\</UnityProjectDir>
+        <UnityWSAPlayerDir>C:\Program Files\Unity2018\Editor\Data\PlaybackEngines\MetroSupport\</UnityWSAPlayerDir>
+        <UnityWSAToolsDir>$(UnityWSASolutionDir)Unity\Tools\</UnityWSAToolsDir>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+</Project>

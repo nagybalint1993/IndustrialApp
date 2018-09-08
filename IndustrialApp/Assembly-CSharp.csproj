@@ -815,6 +815,7 @@
     <Compile Include="Assets\HoloToolkit\HoloToolkit-UnitTests\Input\TestEventHandler.cs" />
     <Compile Include="Assets\HoloToolkit\HoloToolkit-UnitTests\Utilities\ReflectionTestBehaviour.cs" />
     <Compile Include="Assets\Scripts\ComponentReadySphere.cs" />
+    <Compile Include="Assets\Scripts\Connect.cs" />
     <Compile Include="Assets\Scripts\ContainerPartMesh.cs" />
     <Compile Include="Assets\Scripts\GameObjectMover.cs" />
     <Compile Include="Assets\Scripts\GameObjectMoverZ.cs" />
@@ -913,14 +914,8 @@
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>F:/IndustrialApp/IndustrialApp/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/IndustrialApp/IndustrialApp/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>F:/IndustrialApp/IndustrialApp/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/IndustrialApp/IndustrialApp/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity2018/Editor/Data/PlaybackEngines/MetroSupport/Tools/UnityEngine.AIModule.dll</HintPath>

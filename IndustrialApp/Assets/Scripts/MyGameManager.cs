@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using IndustrialApp.Models;
 using IndustrialApp.Presenter;
 using UnityEngine;
+using UnityEngine.Networking;
 using Vuforia;
 
-public class MyGameManager : MonoBehaviour {
+public class MyGameManager : NetworkBehaviour {
     Presenter presenter;
 
     GameObject titleTextField;
-    GameObject descriptionTextField;
-    GameObject taskTitleTextField;
-    GameObject taskDescriptionTextField;
-    GameObject readySphere;
-    GameObject qrScanDialog;
-    GameObject componentReadyParent;
-    GameObject taskPlane;
-    GameObject subtaskPlane;
-    GameObject cylinder;
+     GameObject descriptionTextField;
+     GameObject taskTitleTextField;
+     GameObject taskDescriptionTextField;
+     GameObject readySphere;
+     GameObject qrScanDialog;
+     GameObject componentReadyParent;
+     GameObject taskPlane;
+     GameObject subtaskPlane;
+     GameObject cylinder;
 
     bool tracked;
     bool materialChanged;
@@ -40,8 +41,12 @@ public class MyGameManager : MonoBehaviour {
     //TEST parameter
     int testcounter;
 
+    //MULTI
+    public bool isHost;
+
     void Start()
     {
+        
         presenter = Presenter.GetPresenter();
         presenter.Start();
 
@@ -65,9 +70,9 @@ public class MyGameManager : MonoBehaviour {
 
         SetWorldObjectsActive(false);
 
-        VuforiaRuntime.Instance.InitVuforia();
-        VuforiaBehaviour.Instance.enabled = true;
-        VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        //VuforiaRuntime.Instance.InitVuforia();
+        //VuforiaBehaviour.Instance.enabled = true;
+        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
         //var objectTracker=  TrackerManager.Instance.GetTracker<ObjectTracker>();
         //objectTracker.Start();
 
@@ -108,22 +113,17 @@ public class MyGameManager : MonoBehaviour {
     }
     private void Update()
     {
+        if (!hasAuthority)
+            return;
         if (tracked)
         {
             if (presenter.containerPartChanged)
             {
                 OnContainerPartChanged();
-                materialChanged = false;
             }
             if (presenter.TypeIsReady && !materialChanged )
             {
-                readySphere.SendMessageUpwards("SetMaterial", 1, SendMessageOptions.DontRequireReceiver);
-                containerPartMeshes[currentContainerPart.Id].material = green;
-                materialChanged = true;
-                if(currentElement != 2 && (currentElement <8))
-                {
-                    audioSource.Play();
-                }
+                OnPartFound();
             }
         }
         
@@ -138,8 +138,20 @@ public class MyGameManager : MonoBehaviour {
         */
     }
 
+    private void OnPartFound()
+    {
+        readySphere.SendMessageUpwards("SetMaterial", 1, SendMessageOptions.DontRequireReceiver);
+        containerPartMeshes[currentContainerPart.Id].material = green;
+        materialChanged = true;
+        if (currentElement != 2 && (currentElement < 8))
+        {
+            audioSource.Play();
+        }
+    }
+
     public void OnContainerPartChanged()
     {
+
         UpdateDescriptionTextField(presenter.currentTaskElement.Description);
         UpdateTitleTextField(presenter.currentTaskElement.Name);
         if (currentContainerPart != null)
@@ -159,6 +171,7 @@ public class MyGameManager : MonoBehaviour {
             componentReadyParent.transform.localScale = new Vector3(0, 0, 0);
             presenter.TypeIsReady = true;
         }
+        materialChanged = false;
     }
 
     public void OnResetButtonPressed()
@@ -260,7 +273,9 @@ public class MyGameManager : MonoBehaviour {
         SetWorldObjectsActive(true);
         taskTitleTextField.GetComponent<TextMesh>().text = presenter.currentTask.Name;
         taskDescriptionTextField.GetComponent<TextMesh>().text = SplitStringToLength( presenter.currentTask.Description, 30);
-        AddCubesToImageTarget(targetName);
+        GameObject imageTargetObject = GameObject.Find(targetName);
+
+        CmdGenerateContainerParts(targetName, imageTargetObject.transform.localPosition, imageTargetObject.transform.rotation, imageTargetObject.transform.localScale);
         tracked = true;
     }
 
@@ -280,21 +295,35 @@ public class MyGameManager : MonoBehaviour {
         presenter.TypeFound(targetName);
     }
 
-    public void AddCubesToImageTarget(string s)
+    [Command]
+    public void CmdGenerateContainerParts(String containerName,  Vector3 serverPosition, Quaternion serverRotation, Vector3 serverScale)
+    {
+        RpcGenerate(containerName, serverPosition, serverRotation, serverScale);
+    }
+
+    void RpcGenerate(String containerName, Vector3 serverPosition,Quaternion serverRotation,Vector3 serverScale)
+    {
+        var worldRoot = GameObject.Find("WorldRoot");
+        var clientPos = serverPosition + worldRoot.transform.position;
+        var clientRot = serverRotation * worldRoot.transform.rotation;
+        AddCubesToImageTarget(containerName, clientPos,clientRot,serverScale);
+    }
+
+    public void AddCubesToImageTarget(string s, Vector3 clientPosition, Quaternion clientRotation, Vector3 clientScale)
     {
         Debug.Log("Generate !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if (s == "20ede1ea-44bc-4cc9-9000-94bdc66cc5b0")
         {
             List<ContainerPart> cplist = presenter.GetContainerParts(s);
-            GameObject imageTargetObject = GameObject.Find(s);
+            
 
-            var qrSize = imageTargetObject.transform.localScale.x;
+            var qrSize = clientScale.x;
 
             parent = new GameObject("parent");
-            parent.transform.parent = imageTargetObject.transform;
-            parent.transform.localPosition = Vector3.zero;
-            parent.transform.localRotation = Quaternion.identity;
-            parent.transform.localScale = Vector3.one;
+            //parent.transform.parent = imageTargetObject.transform;
+            parent.transform.localPosition = clientPosition;
+            parent.transform.localRotation = clientRotation;
+            parent.transform.localScale = clientScale;
 
             foreach (ContainerPart cp in cplist)
             {
