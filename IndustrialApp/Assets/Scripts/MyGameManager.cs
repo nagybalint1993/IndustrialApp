@@ -70,15 +70,20 @@ public class MyGameManager : NetworkBehaviour {
 
         SetWorldObjectsActive(false);
 
-        //VuforiaRuntime.Instance.InitVuforia();
-        //VuforiaBehaviour.Instance.enabled = true;
-        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
-        //var objectTracker=  TrackerManager.Instance.GetTracker<ObjectTracker>();
-        //objectTracker.Start();
+
 
         testcounter = 0;
 
 
+    }
+
+    public void StartVuforia()
+    {
+        VuforiaRuntime.Instance.InitVuforia();
+        VuforiaBehaviour.Instance.enabled = true;
+        VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        var objectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
+        objectTracker.Start();
     }
 
     void StartObjectTracker()
@@ -119,11 +124,11 @@ public class MyGameManager : NetworkBehaviour {
         {
             if (presenter.containerPartChanged)
             {
-                OnContainerPartChanged();
+                CmdOnContainerPartChanged();
             }
             if (presenter.TypeIsReady && !materialChanged )
             {
-                OnPartFound();
+                CmdOnPartFound();
             }
         }
         
@@ -138,8 +143,21 @@ public class MyGameManager : NetworkBehaviour {
         */
     }
 
-    private void OnPartFound()
+    public void SetTypeReady()
     {
+        presenter.TypeIsReady = true;
+    }
+
+    [Command]
+    public void CmdOnPartFound()
+    {
+        RpcOnPartFound();
+    }
+
+    [ClientRpc]
+    private void RpcOnPartFound()
+    {
+        presenter.TypeIsReady = true;
         readySphere.SendMessageUpwards("SetMaterial", 1, SendMessageOptions.DontRequireReceiver);
         containerPartMeshes[currentContainerPart.Id].material = green;
         materialChanged = true;
@@ -149,9 +167,15 @@ public class MyGameManager : NetworkBehaviour {
         }
     }
 
-    public void OnContainerPartChanged()
+    [Command]
+    public void CmdOnContainerPartChanged()
     {
+        RpcOnContainerPartChanged();
+    }
 
+    [ClientRpc]
+    public void RpcOnContainerPartChanged()
+    {
         UpdateDescriptionTextField(presenter.currentTaskElement.Description);
         UpdateTitleTextField(presenter.currentTaskElement.Name);
         if (currentContainerPart != null)
@@ -192,7 +216,20 @@ public class MyGameManager : NetworkBehaviour {
         currentElement = 0;
     }
 
+
     public void OnNextButtonPressed()
+    {
+        CmdOnNextButtonPressed();
+    }
+
+    [Command]
+    public void CmdOnNextButtonPressed()
+    {
+        RpcOnNextButtonPressed();
+    }
+
+    [ClientRpc]
+    public void RpcOnNextButtonPressed()
     {
         if (presenter.TypeIsReady)
         {
@@ -226,12 +263,26 @@ public class MyGameManager : NetworkBehaviour {
         }
         else
         {
-            qrScanDialog.SetActive(true);
-        }
+            if (hasAuthority)
+            {
+                qrScanDialog.SetActive(true);
+            }
 
+        }
     }
 
     public void OnBackButtonPressed()
+    {
+        CmdOnBackButtonPressed();
+    }
+    [Command]
+    public void CmdOnBackButtonPressed()
+    {
+        RpcOnBackButtonPressed();
+    }
+
+    [ClientRpc]
+    public void RpcOnBackButtonPressed()
     {
         presenter.DoPreviousTaskElement();
         PCBparts[currentElement].SetActive(false);
@@ -301,6 +352,7 @@ public class MyGameManager : NetworkBehaviour {
         RpcGenerate(containerName, serverPosition, serverRotation, serverScale);
     }
 
+    [ClientRpc]
     void RpcGenerate(String containerName, Vector3 serverPosition,Quaternion serverRotation,Vector3 serverScale)
     {
         var worldRoot = GameObject.Find("WorldRoot");

@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{7dd1c6d3-ef72-41f7-b734-b77e4210d0d1}</ProjectGuid>
+    <ProjectGuid>{19b84f46-61b3-4156-865e-87fb9d615b30}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssemblyCSharpWSA</RootNamespace>
@@ -131,7 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="F:\IndustrialApp\IndustrialApp\UWPmulti\GeneratedProjects\UWP\Assembly-CSharp-firstpass\Assembly-CSharp-firstpass.csproj">
-      <Project>{c2b9d3c5-4249-44c1-b49f-466c75c435ec}</Project>
+      <Project>{fe4b23a7-3a4e-4fa6-b24f-d35de79e58ed}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <Reference Include="UnityEngine.SpriteMaskModule">

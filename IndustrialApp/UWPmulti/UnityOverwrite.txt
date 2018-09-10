@@ -10,7 +10,7 @@ GeneratedProjects\UWP\Assembly-CSharp\project.json: 1D02BC64BAC0D041019673A1C4C5
 GeneratedProjects\UWP\Assembly-CSharp-firstpass\project.json: 1D02BC64BAC0D041019673A1C4C51737
 IndustrialApp\App.cs: E3D2AB1C5AAFF6E919603FFB75EBCEE5
 IndustrialApp\AssemblyConverterArgs.txt: FFECD8716C494AD84E3CA167F2D0C68D
-IndustrialApp\IndustrialApp.csproj: 6B806F8AD750F7FA0C0116A5D5EB1957
+IndustrialApp\IndustrialApp.csproj: modified
 IndustrialApp\IndustrialApp.csproj.user: modified
 IndustrialApp\Package.appxmanifest: modified
 IndustrialApp\project.json: 1D02BC64BAC0D041019673A1C4C51737
@@ -22,4 +22,5 @@ IndustrialApp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png: 156637F
 IndustrialApp\Assets\StoreLogo.png: 90BD194CA4A7CFFF3E8B8222229857FB
 IndustrialApp\Assets\Wide310x150Logo.scale-200.png: C96846A80DF667F87355569CD816192D
 IndustrialApp\obj\x86\Debug\IndustrialApp.csproj.CopyComplete: D41D8CD98F00B204E9800998ECF8427E
+IndustrialApp\obj\x86\Release\IndustrialApp.csproj.CopyComplete: D41D8CD98F00B204E9800998ECF8427E
 IndustrialApp\Properties\Default.rd.xml: 72EB282657164E79A1C42F6240984826

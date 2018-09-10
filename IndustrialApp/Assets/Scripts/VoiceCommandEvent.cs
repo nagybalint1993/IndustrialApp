@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.Networking;
 
 public class VoiceCommandEvent : MonoBehaviour {
-    /*
+    
 
     [System.Serializable]
     public class KeywordEventPair
@@ -30,5 +30,5 @@ public class VoiceCommandEvent : MonoBehaviour {
         }
         keywordActionListener = new KeywordActionListener(actionPairs);
     }
-    */
+    
 }
