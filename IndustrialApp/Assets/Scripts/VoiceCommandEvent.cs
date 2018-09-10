@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
+#if !UNITY_IOS
 public class VoiceCommandEvent : MonoBehaviour {
     
 
@@ -32,3 +33,4 @@ public class VoiceCommandEvent : MonoBehaviour {
     }
     
 }
+#endif
