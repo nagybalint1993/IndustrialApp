@@ -355,10 +355,15 @@ public class MyGameManager : NetworkBehaviour {
     [ClientRpc]
     void RpcGenerate(String containerName, Vector3 serverPosition,Quaternion serverRotation,Vector3 serverScale)
     {
+        GameObject temp = new GameObject("temo");
         var worldRoot = GameObject.Find("WorldRoot");
-        var clientPos = serverPosition + worldRoot.transform.position;
-        var clientRot = serverRotation * worldRoot.transform.rotation;
+        temp.transform.parent = worldRoot.transform;
+        temp.transform.localPosition = serverPosition;
+        temp.transform.localRotation = serverRotation;
+        var clientPos = temp.transform.position;
+        var clientRot = temp.transform.rotation;
         AddCubesToImageTarget(containerName, clientPos,clientRot,serverScale);
+        Destroy(temp);
     }
 
     public void AddCubesToImageTarget(string s, Vector3 clientPosition, Quaternion clientRotation, Vector3 clientScale)
