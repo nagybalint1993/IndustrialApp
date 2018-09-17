@@ -70,6 +70,8 @@ public class MyGameManager : NetworkBehaviour {
 
         SetWorldObjectsActive(false);
 
+        VuforiaRuntime.Instance.InitVuforia();
+
 
 
         testcounter = 0;
@@ -79,11 +81,20 @@ public class MyGameManager : NetworkBehaviour {
 
     public void StartVuforia()
     {
-        VuforiaRuntime.Instance.InitVuforia();
+        //VuforiaRuntime.Instance.InitVuforia();
         VuforiaBehaviour.Instance.enabled = true;
-        VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
-        var objectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-        objectTracker.Start();
+        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+        audioSource.Play();
+    }
+
+    public void StopVuforia()
+    {
+        VuforiaBehaviour.Instance.enabled = false;
+        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
+        audioSource.Play();
+
     }
 
     void StartObjectTracker()
