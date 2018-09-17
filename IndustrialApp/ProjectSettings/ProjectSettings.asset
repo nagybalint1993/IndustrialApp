@@ -543,7 +543,9 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
   scriptingDefineSymbols:
-    14: 
+    4: CF_FORCE_MOBILE_MODE
+    7: CF_FORCE_MOBILE_MODE
+    14: CF_FORCE_MOBILE_MODE
   platformArchitecture: {}
   scriptingBackend:
     Metro: 1

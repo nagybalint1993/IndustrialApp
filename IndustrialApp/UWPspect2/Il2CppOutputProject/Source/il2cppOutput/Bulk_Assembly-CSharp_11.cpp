@@ -495,8 +495,6 @@ struct List_1_t899420910;
 struct List_1_t463142320;
 // System.Collections.Generic.List`1<Vuforia.ITrackableEventHandler>
 struct List_1_t2968050330;
-// System.Collections.Generic.List`1<Vuforia.IVideoBackgroundEventHandler>
-struct List_1_t905170877;
 // System.Collections.Generic.Queue`1<HoloToolkit.Unity.WorldAnchorManager/AnchorAttachmentInfo>
 struct Queue_1_t2234784041;
 // System.Collections.Generic.Stack`1<UnityEngine.GameObject>
@@ -761,10 +759,6 @@ struct WorldAnchor_t2161774153;
 struct OnTrackingChangedDelegate_t3480415086;
 // UnityEngine.XR.WSA.WorldAnchor[]
 struct WorldAnchorU5BU5D_t652110452;
-// Vuforia.DigitalEyewearARController
-struct DigitalEyewearARController_t1054226036;
-// Vuforia.ICameraConfiguration
-struct ICameraConfiguration_t283990539;
 // Vuforia.ITrackableEventHandler
 struct ITrackableEventHandler_t1495975588;
 // Vuforia.ITrackerManager
@@ -781,16 +775,11 @@ struct TargetFinder_t2439332195;
 struct Trackable_t2451999991;
 // Vuforia.TrackableBehaviour
 struct TrackableBehaviour_t1113559212;
-// Vuforia.VideoBackgroundManager
-struct VideoBackgroundManager_t2198727358;
-// Vuforia.VuforiaARController
-struct VuforiaARController_t1876945237;
 // Vuforia.VuforiaBehaviour
 struct VuforiaBehaviour_t2151848540;
 // Vuforia.VuforiaRuntime
 struct VuforiaRuntime_t1949122020;
 
-extern RuntimeClass* Action_t1264377477_il2cpp_TypeInfo_var;
 extern RuntimeClass* ActiveEvent_t1691504008_il2cpp_TypeInfo_var;
 extern RuntimeClass* AnimationCurve_t3046754366_il2cpp_TypeInfo_var;
 extern RuntimeClass* ArgumentException_t132251570_il2cpp_TypeInfo_var;
@@ -888,7 +877,6 @@ extern RuntimeClass* Vector2_t2156229523_il2cpp_TypeInfo_var;
 extern RuntimeClass* Vector3U5BU5D_t1718750761_il2cpp_TypeInfo_var;
 extern RuntimeClass* Vector3_t3722313464_il2cpp_TypeInfo_var;
 extern RuntimeClass* Vector4U5BU5D_t934056436_il2cpp_TypeInfo_var;
-extern RuntimeClass* VuforiaARController_t1876945237_il2cpp_TypeInfo_var;
 extern RuntimeClass* VuforiaBehaviour_t2151848540_il2cpp_TypeInfo_var;
 extern RuntimeClass* VuforiaRuntime_t1949122020_il2cpp_TypeInfo_var;
 extern RuntimeClass* WindowsApiChecker_t3065255428_il2cpp_TypeInfo_var;
@@ -1188,7 +1176,6 @@ extern const RuntimeMethod* MyGameManager_InvokeRpcRpcOnBackButtonPressed_m62688
 extern const RuntimeMethod* MyGameManager_InvokeRpcRpcOnContainerPartChanged_m3572330077_RuntimeMethod_var;
 extern const RuntimeMethod* MyGameManager_InvokeRpcRpcOnNextButtonPressed_m1145463457_RuntimeMethod_var;
 extern const RuntimeMethod* MyGameManager_InvokeRpcRpcOnPartFound_m2265612273_RuntimeMethod_var;
-extern const RuntimeMethod* MyGameManager_StartObjectTracker_m2175326229_RuntimeMethod_var;
 extern const RuntimeMethod* Object_FindObjectOfType_TisUAudioManager_t15065897_m2782917788_RuntimeMethod_var;
 extern const RuntimeMethod* Object_FindObjectsOfType_TisWorldAnchor_t2161774153_m2179281531_RuntimeMethod_var;
 extern const RuntimeMethod* Object_Instantiate_TisAppBar_t2491505429_m1591173769_RuntimeMethod_var;
@@ -1397,6 +1384,7 @@ extern const uint32_t MyGameManager_SplitStringToLength_m3895505151_MetadataUsag
 extern const uint32_t MyGameManager_StartObjectTracker_m2175326229_MetadataUsageId;
 extern const uint32_t MyGameManager_StartVuforia_m1181401536_MetadataUsageId;
 extern const uint32_t MyGameManager_Start_m4243496860_MetadataUsageId;
+extern const uint32_t MyGameManager_StopVuforia_m337637321_MetadataUsageId;
 extern const uint32_t MyGameManager_UpdateContainer_m2470781554_MetadataUsageId;
 extern const uint32_t MyGameManager_UpdateDescriptionTextField_m76035901_MetadataUsageId;
 extern const uint32_t MyGameManager_UpdateTitleTextField_m2140869799_MetadataUsageId;
@@ -5153,36 +5141,6 @@ struct YieldInstruction_t403091072_marshaled_com
 {
 };
 #endif // YIELDINSTRUCTION_T403091072_H
-#ifndef ARCONTROLLER_T116632334_H
-#define ARCONTROLLER_T116632334_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// Vuforia.ARController
-struct  ARController_t116632334  : public RuntimeObject
-{
-public:
-	// Vuforia.VuforiaBehaviour Vuforia.ARController::mVuforiaBehaviour
-	VuforiaBehaviour_t2151848540 * ___mVuforiaBehaviour_0;
-
-public:
-	inline static int32_t get_offset_of_mVuforiaBehaviour_0() { return static_cast<int32_t>(offsetof(ARController_t116632334, ___mVuforiaBehaviour_0)); }
-	inline VuforiaBehaviour_t2151848540 * get_mVuforiaBehaviour_0() const { return ___mVuforiaBehaviour_0; }
-	inline VuforiaBehaviour_t2151848540 ** get_address_of_mVuforiaBehaviour_0() { return &___mVuforiaBehaviour_0; }
-	inline void set_mVuforiaBehaviour_0(VuforiaBehaviour_t2151848540 * value)
-	{
-		___mVuforiaBehaviour_0 = value;
-		Il2CppCodeGenWriteBarrier((&___mVuforiaBehaviour_0), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // ARCONTROLLER_T116632334_H
 #ifndef TRACKER_T2709586299_H
 #define TRACKER_T2709586299_H
 #ifdef __clang__
@@ -10755,64 +10713,6 @@ struct WorldAnchorStore_t633400888_marshaled_com
 	intptr_t ___m_NativePtr_0;
 };
 #endif // WORLDANCHORSTORE_T633400888_H
-#ifndef CAMERADEVICEMODE_T2478715656_H
-#define CAMERADEVICEMODE_T2478715656_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// Vuforia.CameraDevice/CameraDeviceMode
-struct  CameraDeviceMode_t2478715656 
-{
-public:
-	// System.Int32 Vuforia.CameraDevice/CameraDeviceMode::value__
-	int32_t ___value___2;
-
-public:
-	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(CameraDeviceMode_t2478715656, ___value___2)); }
-	inline int32_t get_value___2() const { return ___value___2; }
-	inline int32_t* get_address_of_value___2() { return &___value___2; }
-	inline void set_value___2(int32_t value)
-	{
-		___value___2 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // CAMERADEVICEMODE_T2478715656_H
-#ifndef CAMERADIRECTION_T637748435_H
-#define CAMERADIRECTION_T637748435_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// Vuforia.CameraDevice/CameraDirection
-struct  CameraDirection_t637748435 
-{
-public:
-	// System.Int32 Vuforia.CameraDevice/CameraDirection::value__
-	int32_t ___value___2;
-
-public:
-	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(CameraDirection_t637748435, ___value___2)); }
-	inline int32_t get_value___2() const { return ___value___2; }
-	inline int32_t* get_address_of_value___2() { return &___value___2; }
-	inline void set_value___2(int32_t value)
-	{
-		___value___2 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // CAMERADIRECTION_T637748435_H
 #ifndef IMAGETARGETTYPE_T2834081427_H
 #define IMAGETARGETTYPE_T2834081427_H
 #ifdef __clang__
@@ -10900,35 +10800,6 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // WORLDCENTERMODE_T3672819471_H
-#ifndef VIDEOBACKGROUNDREFLECTION_T736962841_H
-#define VIDEOBACKGROUNDREFLECTION_T736962841_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// Vuforia.VuforiaRenderer/VideoBackgroundReflection
-struct  VideoBackgroundReflection_t736962841 
-{
-public:
-	// System.Int32 Vuforia.VuforiaRenderer/VideoBackgroundReflection::value__
-	int32_t ___value___2;
-
-public:
-	inline static int32_t get_offset_of_value___2() { return static_cast<int32_t>(offsetof(VideoBackgroundReflection_t736962841, ___value___2)); }
-	inline int32_t get_value___2() const { return ___value___2; }
-	inline int32_t* get_address_of_value___2() { return &___value___2; }
-	inline void set_value___2(int32_t value)
-	{
-		___value___2 = value;
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // VIDEOBACKGROUNDREFLECTION_T736962841_H
 #ifndef INITSTATE_T3374939742_H
 #define INITSTATE_T3374939742_H
 #ifdef __clang__
@@ -12214,377 +12085,6 @@ struct PhraseRecognizedEventArgs_t3182631328_marshaled_com
 	TimeSpan_t881159249  ___phraseDuration_4;
 };
 #endif // PHRASERECOGNIZEDEVENTARGS_T3182631328_H
-#ifndef VUFORIAARCONTROLLER_T1876945237_H
-#define VUFORIAARCONTROLLER_T1876945237_H
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-
-// Vuforia.VuforiaARController
-struct  VuforiaARController_t1876945237  : public ARController_t116632334
-{
-public:
-	// Vuforia.CameraDevice/CameraDeviceMode Vuforia.VuforiaARController::CameraDeviceModeSetting
-	int32_t ___CameraDeviceModeSetting_1;
-	// System.Int32 Vuforia.VuforiaARController::MaxSimultaneousImageTargets
-	int32_t ___MaxSimultaneousImageTargets_2;
-	// System.Int32 Vuforia.VuforiaARController::MaxSimultaneousObjectTargets
-	int32_t ___MaxSimultaneousObjectTargets_3;
-	// System.Boolean Vuforia.VuforiaARController::UseDelayedLoadingObjectTargets
-	bool ___UseDelayedLoadingObjectTargets_4;
-	// Vuforia.CameraDevice/CameraDirection Vuforia.VuforiaARController::CameraDirection
-	int32_t ___CameraDirection_5;
-	// Vuforia.VuforiaRenderer/VideoBackgroundReflection Vuforia.VuforiaARController::MirrorVideoBackground
-	int32_t ___MirrorVideoBackground_6;
-	// Vuforia.VuforiaARController/WorldCenterMode Vuforia.VuforiaARController::mWorldCenterMode
-	int32_t ___mWorldCenterMode_7;
-	// Vuforia.TrackableBehaviour Vuforia.VuforiaARController::mWorldCenter
-	TrackableBehaviour_t1113559212 * ___mWorldCenter_8;
-	// System.Collections.Generic.List`1<Vuforia.IVideoBackgroundEventHandler> Vuforia.VuforiaARController::mVideoBgEventHandlers
-	List_1_t905170877 * ___mVideoBgEventHandlers_9;
-	// System.Action Vuforia.VuforiaARController::mOnBeforeVuforiaTrackersInitialized
-	Action_t1264377477 * ___mOnBeforeVuforiaTrackersInitialized_10;
-	// System.Action Vuforia.VuforiaARController::mOnVuforiaInitialized
-	Action_t1264377477 * ___mOnVuforiaInitialized_11;
-	// System.Action Vuforia.VuforiaARController::mOnVuforiaStarted
-	Action_t1264377477 * ___mOnVuforiaStarted_12;
-	// System.Action Vuforia.VuforiaARController::mOnVuforiaDeinitialized
-	Action_t1264377477 * ___mOnVuforiaDeinitialized_13;
-	// System.Action Vuforia.VuforiaARController::mOnTrackablesUpdated
-	Action_t1264377477 * ___mOnTrackablesUpdated_14;
-	// System.Action Vuforia.VuforiaARController::mRenderOnUpdate
-	Action_t1264377477 * ___mRenderOnUpdate_15;
-	// System.Action`1<System.Boolean> Vuforia.VuforiaARController::mOnPause
-	Action_1_t269755560 * ___mOnPause_16;
-	// System.Boolean Vuforia.VuforiaARController::mPaused
-	bool ___mPaused_17;
-	// System.Action Vuforia.VuforiaARController::mOnBackgroundTextureChanged
-	Action_t1264377477 * ___mOnBackgroundTextureChanged_18;
-	// System.Boolean Vuforia.VuforiaARController::mStartHasBeenInvoked
-	bool ___mStartHasBeenInvoked_19;
-	// System.Boolean Vuforia.VuforiaARController::mHasStarted
-	bool ___mHasStarted_20;
-	// Vuforia.ICameraConfiguration Vuforia.VuforiaARController::mCameraConfiguration
-	RuntimeObject* ___mCameraConfiguration_21;
-	// Vuforia.DigitalEyewearARController Vuforia.VuforiaARController::mEyewearBehaviour
-	DigitalEyewearARController_t1054226036 * ___mEyewearBehaviour_22;
-	// Vuforia.VideoBackgroundManager Vuforia.VuforiaARController::mVideoBackgroundMgr
-	VideoBackgroundManager_t2198727358 * ___mVideoBackgroundMgr_23;
-	// System.Boolean Vuforia.VuforiaARController::mCheckStopCamera
-	bool ___mCheckStopCamera_24;
-	// UnityEngine.Material Vuforia.VuforiaARController::mClearMaterial
-	Material_t340375123 * ___mClearMaterial_25;
-	// System.Boolean Vuforia.VuforiaARController::mMetalRendering
-	bool ___mMetalRendering_26;
-	// System.Boolean Vuforia.VuforiaARController::mHasStartedOnce
-	bool ___mHasStartedOnce_27;
-	// System.Boolean Vuforia.VuforiaARController::mWasEnabledBeforePause
-	bool ___mWasEnabledBeforePause_28;
-	// System.Boolean Vuforia.VuforiaARController::mObjectTrackerWasActiveBeforePause
-	bool ___mObjectTrackerWasActiveBeforePause_29;
-	// System.Boolean Vuforia.VuforiaARController::mObjectTrackerWasActiveBeforeDisabling
-	bool ___mObjectTrackerWasActiveBeforeDisabling_30;
-	// System.Int32 Vuforia.VuforiaARController::mLastUpdatedFrame
-	int32_t ___mLastUpdatedFrame_31;
-
-public:
-	inline static int32_t get_offset_of_CameraDeviceModeSetting_1() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___CameraDeviceModeSetting_1)); }
-	inline int32_t get_CameraDeviceModeSetting_1() const { return ___CameraDeviceModeSetting_1; }
-	inline int32_t* get_address_of_CameraDeviceModeSetting_1() { return &___CameraDeviceModeSetting_1; }
-	inline void set_CameraDeviceModeSetting_1(int32_t value)
-	{
-		___CameraDeviceModeSetting_1 = value;
-	}
-
-	inline static int32_t get_offset_of_MaxSimultaneousImageTargets_2() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___MaxSimultaneousImageTargets_2)); }
-	inline int32_t get_MaxSimultaneousImageTargets_2() const { return ___MaxSimultaneousImageTargets_2; }
-	inline int32_t* get_address_of_MaxSimultaneousImageTargets_2() { return &___MaxSimultaneousImageTargets_2; }
-	inline void set_MaxSimultaneousImageTargets_2(int32_t value)
-	{
-		___MaxSimultaneousImageTargets_2 = value;
-	}
-
-	inline static int32_t get_offset_of_MaxSimultaneousObjectTargets_3() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___MaxSimultaneousObjectTargets_3)); }
-	inline int32_t get_MaxSimultaneousObjectTargets_3() const { return ___MaxSimultaneousObjectTargets_3; }
-	inline int32_t* get_address_of_MaxSimultaneousObjectTargets_3() { return &___MaxSimultaneousObjectTargets_3; }
-	inline void set_MaxSimultaneousObjectTargets_3(int32_t value)
-	{
-		___MaxSimultaneousObjectTargets_3 = value;
-	}
-
-	inline static int32_t get_offset_of_UseDelayedLoadingObjectTargets_4() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___UseDelayedLoadingObjectTargets_4)); }
-	inline bool get_UseDelayedLoadingObjectTargets_4() const { return ___UseDelayedLoadingObjectTargets_4; }
-	inline bool* get_address_of_UseDelayedLoadingObjectTargets_4() { return &___UseDelayedLoadingObjectTargets_4; }
-	inline void set_UseDelayedLoadingObjectTargets_4(bool value)
-	{
-		___UseDelayedLoadingObjectTargets_4 = value;
-	}
-
-	inline static int32_t get_offset_of_CameraDirection_5() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___CameraDirection_5)); }
-	inline int32_t get_CameraDirection_5() const { return ___CameraDirection_5; }
-	inline int32_t* get_address_of_CameraDirection_5() { return &___CameraDirection_5; }
-	inline void set_CameraDirection_5(int32_t value)
-	{
-		___CameraDirection_5 = value;
-	}
-
-	inline static int32_t get_offset_of_MirrorVideoBackground_6() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___MirrorVideoBackground_6)); }
-	inline int32_t get_MirrorVideoBackground_6() const { return ___MirrorVideoBackground_6; }
-	inline int32_t* get_address_of_MirrorVideoBackground_6() { return &___MirrorVideoBackground_6; }
-	inline void set_MirrorVideoBackground_6(int32_t value)
-	{
-		___MirrorVideoBackground_6 = value;
-	}
-
-	inline static int32_t get_offset_of_mWorldCenterMode_7() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mWorldCenterMode_7)); }
-	inline int32_t get_mWorldCenterMode_7() const { return ___mWorldCenterMode_7; }
-	inline int32_t* get_address_of_mWorldCenterMode_7() { return &___mWorldCenterMode_7; }
-	inline void set_mWorldCenterMode_7(int32_t value)
-	{
-		___mWorldCenterMode_7 = value;
-	}
-
-	inline static int32_t get_offset_of_mWorldCenter_8() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mWorldCenter_8)); }
-	inline TrackableBehaviour_t1113559212 * get_mWorldCenter_8() const { return ___mWorldCenter_8; }
-	inline TrackableBehaviour_t1113559212 ** get_address_of_mWorldCenter_8() { return &___mWorldCenter_8; }
-	inline void set_mWorldCenter_8(TrackableBehaviour_t1113559212 * value)
-	{
-		___mWorldCenter_8 = value;
-		Il2CppCodeGenWriteBarrier((&___mWorldCenter_8), value);
-	}
-
-	inline static int32_t get_offset_of_mVideoBgEventHandlers_9() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mVideoBgEventHandlers_9)); }
-	inline List_1_t905170877 * get_mVideoBgEventHandlers_9() const { return ___mVideoBgEventHandlers_9; }
-	inline List_1_t905170877 ** get_address_of_mVideoBgEventHandlers_9() { return &___mVideoBgEventHandlers_9; }
-	inline void set_mVideoBgEventHandlers_9(List_1_t905170877 * value)
-	{
-		___mVideoBgEventHandlers_9 = value;
-		Il2CppCodeGenWriteBarrier((&___mVideoBgEventHandlers_9), value);
-	}
-
-	inline static int32_t get_offset_of_mOnBeforeVuforiaTrackersInitialized_10() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnBeforeVuforiaTrackersInitialized_10)); }
-	inline Action_t1264377477 * get_mOnBeforeVuforiaTrackersInitialized_10() const { return ___mOnBeforeVuforiaTrackersInitialized_10; }
-	inline Action_t1264377477 ** get_address_of_mOnBeforeVuforiaTrackersInitialized_10() { return &___mOnBeforeVuforiaTrackersInitialized_10; }
-	inline void set_mOnBeforeVuforiaTrackersInitialized_10(Action_t1264377477 * value)
-	{
-		___mOnBeforeVuforiaTrackersInitialized_10 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnBeforeVuforiaTrackersInitialized_10), value);
-	}
-
-	inline static int32_t get_offset_of_mOnVuforiaInitialized_11() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnVuforiaInitialized_11)); }
-	inline Action_t1264377477 * get_mOnVuforiaInitialized_11() const { return ___mOnVuforiaInitialized_11; }
-	inline Action_t1264377477 ** get_address_of_mOnVuforiaInitialized_11() { return &___mOnVuforiaInitialized_11; }
-	inline void set_mOnVuforiaInitialized_11(Action_t1264377477 * value)
-	{
-		___mOnVuforiaInitialized_11 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnVuforiaInitialized_11), value);
-	}
-
-	inline static int32_t get_offset_of_mOnVuforiaStarted_12() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnVuforiaStarted_12)); }
-	inline Action_t1264377477 * get_mOnVuforiaStarted_12() const { return ___mOnVuforiaStarted_12; }
-	inline Action_t1264377477 ** get_address_of_mOnVuforiaStarted_12() { return &___mOnVuforiaStarted_12; }
-	inline void set_mOnVuforiaStarted_12(Action_t1264377477 * value)
-	{
-		___mOnVuforiaStarted_12 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnVuforiaStarted_12), value);
-	}
-
-	inline static int32_t get_offset_of_mOnVuforiaDeinitialized_13() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnVuforiaDeinitialized_13)); }
-	inline Action_t1264377477 * get_mOnVuforiaDeinitialized_13() const { return ___mOnVuforiaDeinitialized_13; }
-	inline Action_t1264377477 ** get_address_of_mOnVuforiaDeinitialized_13() { return &___mOnVuforiaDeinitialized_13; }
-	inline void set_mOnVuforiaDeinitialized_13(Action_t1264377477 * value)
-	{
-		___mOnVuforiaDeinitialized_13 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnVuforiaDeinitialized_13), value);
-	}
-
-	inline static int32_t get_offset_of_mOnTrackablesUpdated_14() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnTrackablesUpdated_14)); }
-	inline Action_t1264377477 * get_mOnTrackablesUpdated_14() const { return ___mOnTrackablesUpdated_14; }
-	inline Action_t1264377477 ** get_address_of_mOnTrackablesUpdated_14() { return &___mOnTrackablesUpdated_14; }
-	inline void set_mOnTrackablesUpdated_14(Action_t1264377477 * value)
-	{
-		___mOnTrackablesUpdated_14 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnTrackablesUpdated_14), value);
-	}
-
-	inline static int32_t get_offset_of_mRenderOnUpdate_15() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mRenderOnUpdate_15)); }
-	inline Action_t1264377477 * get_mRenderOnUpdate_15() const { return ___mRenderOnUpdate_15; }
-	inline Action_t1264377477 ** get_address_of_mRenderOnUpdate_15() { return &___mRenderOnUpdate_15; }
-	inline void set_mRenderOnUpdate_15(Action_t1264377477 * value)
-	{
-		___mRenderOnUpdate_15 = value;
-		Il2CppCodeGenWriteBarrier((&___mRenderOnUpdate_15), value);
-	}
-
-	inline static int32_t get_offset_of_mOnPause_16() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnPause_16)); }
-	inline Action_1_t269755560 * get_mOnPause_16() const { return ___mOnPause_16; }
-	inline Action_1_t269755560 ** get_address_of_mOnPause_16() { return &___mOnPause_16; }
-	inline void set_mOnPause_16(Action_1_t269755560 * value)
-	{
-		___mOnPause_16 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnPause_16), value);
-	}
-
-	inline static int32_t get_offset_of_mPaused_17() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mPaused_17)); }
-	inline bool get_mPaused_17() const { return ___mPaused_17; }
-	inline bool* get_address_of_mPaused_17() { return &___mPaused_17; }
-	inline void set_mPaused_17(bool value)
-	{
-		___mPaused_17 = value;
-	}
-
-	inline static int32_t get_offset_of_mOnBackgroundTextureChanged_18() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mOnBackgroundTextureChanged_18)); }
-	inline Action_t1264377477 * get_mOnBackgroundTextureChanged_18() const { return ___mOnBackgroundTextureChanged_18; }
-	inline Action_t1264377477 ** get_address_of_mOnBackgroundTextureChanged_18() { return &___mOnBackgroundTextureChanged_18; }
-	inline void set_mOnBackgroundTextureChanged_18(Action_t1264377477 * value)
-	{
-		___mOnBackgroundTextureChanged_18 = value;
-		Il2CppCodeGenWriteBarrier((&___mOnBackgroundTextureChanged_18), value);
-	}
-
-	inline static int32_t get_offset_of_mStartHasBeenInvoked_19() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mStartHasBeenInvoked_19)); }
-	inline bool get_mStartHasBeenInvoked_19() const { return ___mStartHasBeenInvoked_19; }
-	inline bool* get_address_of_mStartHasBeenInvoked_19() { return &___mStartHasBeenInvoked_19; }
-	inline void set_mStartHasBeenInvoked_19(bool value)
-	{
-		___mStartHasBeenInvoked_19 = value;
-	}
-
-	inline static int32_t get_offset_of_mHasStarted_20() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mHasStarted_20)); }
-	inline bool get_mHasStarted_20() const { return ___mHasStarted_20; }
-	inline bool* get_address_of_mHasStarted_20() { return &___mHasStarted_20; }
-	inline void set_mHasStarted_20(bool value)
-	{
-		___mHasStarted_20 = value;
-	}
-
-	inline static int32_t get_offset_of_mCameraConfiguration_21() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mCameraConfiguration_21)); }
-	inline RuntimeObject* get_mCameraConfiguration_21() const { return ___mCameraConfiguration_21; }
-	inline RuntimeObject** get_address_of_mCameraConfiguration_21() { return &___mCameraConfiguration_21; }
-	inline void set_mCameraConfiguration_21(RuntimeObject* value)
-	{
-		___mCameraConfiguration_21 = value;
-		Il2CppCodeGenWriteBarrier((&___mCameraConfiguration_21), value);
-	}
-
-	inline static int32_t get_offset_of_mEyewearBehaviour_22() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mEyewearBehaviour_22)); }
-	inline DigitalEyewearARController_t1054226036 * get_mEyewearBehaviour_22() const { return ___mEyewearBehaviour_22; }
-	inline DigitalEyewearARController_t1054226036 ** get_address_of_mEyewearBehaviour_22() { return &___mEyewearBehaviour_22; }
-	inline void set_mEyewearBehaviour_22(DigitalEyewearARController_t1054226036 * value)
-	{
-		___mEyewearBehaviour_22 = value;
-		Il2CppCodeGenWriteBarrier((&___mEyewearBehaviour_22), value);
-	}
-
-	inline static int32_t get_offset_of_mVideoBackgroundMgr_23() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mVideoBackgroundMgr_23)); }
-	inline VideoBackgroundManager_t2198727358 * get_mVideoBackgroundMgr_23() const { return ___mVideoBackgroundMgr_23; }
-	inline VideoBackgroundManager_t2198727358 ** get_address_of_mVideoBackgroundMgr_23() { return &___mVideoBackgroundMgr_23; }
-	inline void set_mVideoBackgroundMgr_23(VideoBackgroundManager_t2198727358 * value)
-	{
-		___mVideoBackgroundMgr_23 = value;
-		Il2CppCodeGenWriteBarrier((&___mVideoBackgroundMgr_23), value);
-	}
-
-	inline static int32_t get_offset_of_mCheckStopCamera_24() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mCheckStopCamera_24)); }
-	inline bool get_mCheckStopCamera_24() const { return ___mCheckStopCamera_24; }
-	inline bool* get_address_of_mCheckStopCamera_24() { return &___mCheckStopCamera_24; }
-	inline void set_mCheckStopCamera_24(bool value)
-	{
-		___mCheckStopCamera_24 = value;
-	}
-
-	inline static int32_t get_offset_of_mClearMaterial_25() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mClearMaterial_25)); }
-	inline Material_t340375123 * get_mClearMaterial_25() const { return ___mClearMaterial_25; }
-	inline Material_t340375123 ** get_address_of_mClearMaterial_25() { return &___mClearMaterial_25; }
-	inline void set_mClearMaterial_25(Material_t340375123 * value)
-	{
-		___mClearMaterial_25 = value;
-		Il2CppCodeGenWriteBarrier((&___mClearMaterial_25), value);
-	}
-
-	inline static int32_t get_offset_of_mMetalRendering_26() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mMetalRendering_26)); }
-	inline bool get_mMetalRendering_26() const { return ___mMetalRendering_26; }
-	inline bool* get_address_of_mMetalRendering_26() { return &___mMetalRendering_26; }
-	inline void set_mMetalRendering_26(bool value)
-	{
-		___mMetalRendering_26 = value;
-	}
-
-	inline static int32_t get_offset_of_mHasStartedOnce_27() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mHasStartedOnce_27)); }
-	inline bool get_mHasStartedOnce_27() const { return ___mHasStartedOnce_27; }
-	inline bool* get_address_of_mHasStartedOnce_27() { return &___mHasStartedOnce_27; }
-	inline void set_mHasStartedOnce_27(bool value)
-	{
-		___mHasStartedOnce_27 = value;
-	}
-
-	inline static int32_t get_offset_of_mWasEnabledBeforePause_28() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mWasEnabledBeforePause_28)); }
-	inline bool get_mWasEnabledBeforePause_28() const { return ___mWasEnabledBeforePause_28; }
-	inline bool* get_address_of_mWasEnabledBeforePause_28() { return &___mWasEnabledBeforePause_28; }
-	inline void set_mWasEnabledBeforePause_28(bool value)
-	{
-		___mWasEnabledBeforePause_28 = value;
-	}
-
-	inline static int32_t get_offset_of_mObjectTrackerWasActiveBeforePause_29() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mObjectTrackerWasActiveBeforePause_29)); }
-	inline bool get_mObjectTrackerWasActiveBeforePause_29() const { return ___mObjectTrackerWasActiveBeforePause_29; }
-	inline bool* get_address_of_mObjectTrackerWasActiveBeforePause_29() { return &___mObjectTrackerWasActiveBeforePause_29; }
-	inline void set_mObjectTrackerWasActiveBeforePause_29(bool value)
-	{
-		___mObjectTrackerWasActiveBeforePause_29 = value;
-	}
-
-	inline static int32_t get_offset_of_mObjectTrackerWasActiveBeforeDisabling_30() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mObjectTrackerWasActiveBeforeDisabling_30)); }
-	inline bool get_mObjectTrackerWasActiveBeforeDisabling_30() const { return ___mObjectTrackerWasActiveBeforeDisabling_30; }
-	inline bool* get_address_of_mObjectTrackerWasActiveBeforeDisabling_30() { return &___mObjectTrackerWasActiveBeforeDisabling_30; }
-	inline void set_mObjectTrackerWasActiveBeforeDisabling_30(bool value)
-	{
-		___mObjectTrackerWasActiveBeforeDisabling_30 = value;
-	}
-
-	inline static int32_t get_offset_of_mLastUpdatedFrame_31() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237, ___mLastUpdatedFrame_31)); }
-	inline int32_t get_mLastUpdatedFrame_31() const { return ___mLastUpdatedFrame_31; }
-	inline int32_t* get_address_of_mLastUpdatedFrame_31() { return &___mLastUpdatedFrame_31; }
-	inline void set_mLastUpdatedFrame_31(int32_t value)
-	{
-		___mLastUpdatedFrame_31 = value;
-	}
-};
-
-struct VuforiaARController_t1876945237_StaticFields
-{
-public:
-	// Vuforia.VuforiaARController Vuforia.VuforiaARController::mInstance
-	VuforiaARController_t1876945237 * ___mInstance_32;
-	// System.Object Vuforia.VuforiaARController::mPadlock
-	RuntimeObject * ___mPadlock_33;
-
-public:
-	inline static int32_t get_offset_of_mInstance_32() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237_StaticFields, ___mInstance_32)); }
-	inline VuforiaARController_t1876945237 * get_mInstance_32() const { return ___mInstance_32; }
-	inline VuforiaARController_t1876945237 ** get_address_of_mInstance_32() { return &___mInstance_32; }
-	inline void set_mInstance_32(VuforiaARController_t1876945237 * value)
-	{
-		___mInstance_32 = value;
-		Il2CppCodeGenWriteBarrier((&___mInstance_32), value);
-	}
-
-	inline static int32_t get_offset_of_mPadlock_33() { return static_cast<int32_t>(offsetof(VuforiaARController_t1876945237_StaticFields, ___mPadlock_33)); }
-	inline RuntimeObject * get_mPadlock_33() const { return ___mPadlock_33; }
-	inline RuntimeObject ** get_address_of_mPadlock_33() { return &___mPadlock_33; }
-	inline void set_mPadlock_33(RuntimeObject * value)
-	{
-		___mPadlock_33 = value;
-		Il2CppCodeGenWriteBarrier((&___mPadlock_33), value);
-	}
-};
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#endif // VUFORIAARCONTROLLER_T1876945237_H
 #ifndef VUFORIARUNTIME_T1949122020_H
 #define VUFORIARUNTIME_T1949122020_H
 #ifdef __clang__
@@ -23217,14 +22717,10 @@ extern "C" IL2CPP_METHOD_ATTR VuforiaRuntime_t1949122020 * VuforiaRuntime_get_In
 extern "C" IL2CPP_METHOD_ATTR void VuforiaRuntime_InitVuforia_m64948871 (VuforiaRuntime_t1949122020 * __this, const RuntimeMethod* method);
 // Vuforia.VuforiaBehaviour Vuforia.VuforiaBehaviour::get_Instance()
 extern "C" IL2CPP_METHOD_ATTR VuforiaBehaviour_t2151848540 * VuforiaBehaviour_get_Instance_m214402642 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
-// Vuforia.VuforiaARController Vuforia.VuforiaARController::get_Instance()
-extern "C" IL2CPP_METHOD_ATTR VuforiaARController_t1876945237 * VuforiaARController_get_Instance_m1100644214 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
-// System.Void System.Action::.ctor(System.Object,System.IntPtr)
-extern "C" IL2CPP_METHOD_ATTR void Action__ctor_m75143462 (Action_t1264377477 * __this, RuntimeObject * p0, intptr_t p1, const RuntimeMethod* method);
-// System.Void Vuforia.VuforiaARController::RegisterVuforiaStartedCallback(System.Action)
-extern "C" IL2CPP_METHOD_ATTR void VuforiaARController_RegisterVuforiaStartedCallback_m3258152770 (VuforiaARController_t1876945237 * __this, Action_t1264377477 * p0, const RuntimeMethod* method);
 // Vuforia.ITrackerManager Vuforia.TrackerManager::get_Instance()
 extern "C" IL2CPP_METHOD_ATTR RuntimeObject* TrackerManager_get_Instance_m777262631 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method);
+// System.Void UnityEngine.AudioSource::Play()
+extern "C" IL2CPP_METHOD_ATTR void AudioSource_Play_m48294159 (AudioSource_t3935305588 * __this, const RuntimeMethod* method);
 // System.Void System.Collections.Generic.Dictionary`2<System.Int32,UnityEngine.GameObject>::Add(!0,!1)
 inline void Dictionary_2_Add_m754758468 (Dictionary_2_t2349950 * __this, int32_t p0, GameObject_t1113636619 * p1, const RuntimeMethod* method)
 {
@@ -23261,8 +22757,6 @@ inline Renderer_t2627027031 * Dictionary_2_get_Item_m1339605217 (Dictionary_2_t1
 {
 	return ((  Renderer_t2627027031 * (*) (Dictionary_2_t1515740362 *, int32_t, const RuntimeMethod*))Dictionary_2_get_Item_m193757924_gshared)(__this, p0, method);
 }
-// System.Void UnityEngine.AudioSource::Play()
-extern "C" IL2CPP_METHOD_ATTR void AudioSource_Play_m48294159 (AudioSource_t3935305588 * __this, const RuntimeMethod* method);
 // System.Void MyGameManager::CallRpcOnContainerPartChanged()
 extern "C" IL2CPP_METHOD_ATTR void MyGameManager_CallRpcOnContainerPartChanged_m961639642 (MyGameManager_t3559350381 * __this, const RuntimeMethod* method);
 // IndustrialApp.Models.TaskElement IndustrialApp.Presenter.Presenter::get_currentTaskElement()
@@ -47823,6 +47317,11 @@ extern "C" IL2CPP_METHOD_ATTR void MyGameManager_Start_m4243496860 (MyGameManage
 		MyGameManager_initPCBparts_m473433009(__this, /*hidden argument*/NULL);
 		// SetWorldObjectsActive(false);
 		MyGameManager_SetWorldObjectsActive_m3001962186(__this, (bool)0, /*hidden argument*/NULL);
+		// VuforiaRuntime.Instance.InitVuforia();
+		IL2CPP_RUNTIME_CLASS_INIT(VuforiaRuntime_t1949122020_il2cpp_TypeInfo_var);
+		VuforiaRuntime_t1949122020 * L_15 = VuforiaRuntime_get_Instance_m1058251676(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_15);
+		VuforiaRuntime_InitVuforia_m64948871(L_15, /*hidden argument*/NULL);
 		// testcounter = 0;
 		__this->set_testcounter_32(0);
 		// }
@@ -47839,31 +47338,50 @@ extern "C" IL2CPP_METHOD_ATTR void MyGameManager_StartVuforia_m1181401536 (MyGam
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		// VuforiaRuntime.Instance.InitVuforia();
-		IL2CPP_RUNTIME_CLASS_INIT(VuforiaRuntime_t1949122020_il2cpp_TypeInfo_var);
-		VuforiaRuntime_t1949122020 * L_0 = VuforiaRuntime_get_Instance_m1058251676(NULL /*static, unused*/, /*hidden argument*/NULL);
-		NullCheck(L_0);
-		VuforiaRuntime_InitVuforia_m64948871(L_0, /*hidden argument*/NULL);
 		// VuforiaBehaviour.Instance.enabled = true;
 		IL2CPP_RUNTIME_CLASS_INIT(VuforiaBehaviour_t2151848540_il2cpp_TypeInfo_var);
-		VuforiaBehaviour_t2151848540 * L_1 = VuforiaBehaviour_get_Instance_m214402642(NULL /*static, unused*/, /*hidden argument*/NULL);
+		VuforiaBehaviour_t2151848540 * L_0 = VuforiaBehaviour_get_Instance_m214402642(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Behaviour_set_enabled_m20417929(L_0, (bool)1, /*hidden argument*/NULL);
+		// TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+		RuntimeObject* L_1 = TrackerManager_get_Instance_m777262631(NULL /*static, unused*/, /*hidden argument*/NULL);
 		NullCheck(L_1);
-		Behaviour_set_enabled_m20417929(L_1, (bool)1, /*hidden argument*/NULL);
-		// VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
-		IL2CPP_RUNTIME_CLASS_INIT(VuforiaARController_t1876945237_il2cpp_TypeInfo_var);
-		VuforiaARController_t1876945237 * L_2 = VuforiaARController_get_Instance_m1100644214(NULL /*static, unused*/, /*hidden argument*/NULL);
-		intptr_t L_3 = (intptr_t)MyGameManager_StartObjectTracker_m2175326229_RuntimeMethod_var;
-		Action_t1264377477 * L_4 = (Action_t1264377477 *)il2cpp_codegen_object_new(Action_t1264377477_il2cpp_TypeInfo_var);
-		Action__ctor_m75143462(L_4, __this, L_3, /*hidden argument*/NULL);
+		ObjectTracker_t4177997237 * L_2 = GenericInterfaceFuncInvoker0< ObjectTracker_t4177997237 * >::Invoke(ITrackerManager_GetTracker_TisObjectTracker_t4177997237_m1548597255_RuntimeMethod_var, L_1);
 		NullCheck(L_2);
-		VuforiaARController_RegisterVuforiaStartedCallback_m3258152770(L_2, L_4, /*hidden argument*/NULL);
-		// var objectTracker = TrackerManager.Instance.GetTracker<ObjectTracker>();
-		RuntimeObject* L_5 = TrackerManager_get_Instance_m777262631(NULL /*static, unused*/, /*hidden argument*/NULL);
-		NullCheck(L_5);
-		ObjectTracker_t4177997237 * L_6 = GenericInterfaceFuncInvoker0< ObjectTracker_t4177997237 * >::Invoke(ITrackerManager_GetTracker_TisObjectTracker_t4177997237_m1548597255_RuntimeMethod_var, L_5);
-		// objectTracker.Start();
-		NullCheck(L_6);
-		VirtFuncInvoker0< bool >::Invoke(4 /* System.Boolean Vuforia.Tracker::Start() */, L_6);
+		VirtFuncInvoker0< bool >::Invoke(4 /* System.Boolean Vuforia.Tracker::Start() */, L_2);
+		// audioSource.Play();
+		AudioSource_t3935305588 * L_3 = __this->get_audioSource_26();
+		NullCheck(L_3);
+		AudioSource_Play_m48294159(L_3, /*hidden argument*/NULL);
+		// }
+		return;
+	}
+}
+// System.Void MyGameManager::StopVuforia()
+extern "C" IL2CPP_METHOD_ATTR void MyGameManager_StopVuforia_m337637321 (MyGameManager_t3559350381 * __this, const RuntimeMethod* method)
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (MyGameManager_StopVuforia_m337637321_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		// VuforiaBehaviour.Instance.enabled = false;
+		IL2CPP_RUNTIME_CLASS_INIT(VuforiaBehaviour_t2151848540_il2cpp_TypeInfo_var);
+		VuforiaBehaviour_t2151848540 * L_0 = VuforiaBehaviour_get_Instance_m214402642(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_0);
+		Behaviour_set_enabled_m20417929(L_0, (bool)0, /*hidden argument*/NULL);
+		// TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
+		RuntimeObject* L_1 = TrackerManager_get_Instance_m777262631(NULL /*static, unused*/, /*hidden argument*/NULL);
+		NullCheck(L_1);
+		ObjectTracker_t4177997237 * L_2 = GenericInterfaceFuncInvoker0< ObjectTracker_t4177997237 * >::Invoke(ITrackerManager_GetTracker_TisObjectTracker_t4177997237_m1548597255_RuntimeMethod_var, L_1);
+		NullCheck(L_2);
+		VirtActionInvoker0::Invoke(5 /* System.Void Vuforia.Tracker::Stop() */, L_2);
+		// audioSource.Play();
+		AudioSource_t3935305588 * L_3 = __this->get_audioSource_26();
+		NullCheck(L_3);
+		AudioSource_Play_m48294159(L_3, /*hidden argument*/NULL);
 		// }
 		return;
 	}

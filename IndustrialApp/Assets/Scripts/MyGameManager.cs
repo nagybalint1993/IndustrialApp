@@ -460,9 +460,18 @@ public class MyGameManager : NetworkBehaviour {
             cylinder.transform.parent = parent.transform;
             cylinder.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
             cylinder.transform.localPosition = new Vector3(6.325f, 2.5f, -0.345f);
-            cylinder.transform.parent = null;
+            //cylinder.transform.parent = null;
 
-            parent.transform.parent = null;
+            var wordroot = GameObject.Find("WorldRoot");
+            if(wordroot!= null)
+            {
+                parent.transform.parent = wordroot.transform;
+            }
+            else
+            {
+               parent.transform.parent = null;
+            }
+
         }
     }
 
