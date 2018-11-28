@@ -29,6 +29,9 @@ import { AddStepComponent } from './Pages/Step/add-step/add-step.component';
 import { EditStepComponent } from './Pages/Step/edit-step/edit-step.component';
 import { StepService } from '@app/Services/StepService/step.service';
 import { ProcessService } from '@app/Services/ProcessService/process.service';
+import { AddUserComponent } from './Pages/User/add-user/add-user.component';
+import { EditUserComponent } from './Pages/User/edit-user/edit-user.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { ProcessService } from '@app/Services/ProcessService/process.service';
     AddProcessComponent,
     EditProcessComponent,
     AddStepComponent,
-    EditStepComponent
+    EditStepComponent,
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,8 @@ import { ProcessService } from '@app/Services/ProcessService/process.service';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    QRCodeModule
   ],
   providers: [
     AppConfig,

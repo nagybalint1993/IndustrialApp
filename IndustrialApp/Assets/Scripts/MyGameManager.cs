@@ -5,6 +5,7 @@ using IndustrialApp.Models;
 using IndustrialApp.Presenter;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Video;
 using Vuforia;
 
 public class MyGameManager : NetworkBehaviour {
@@ -20,6 +21,9 @@ public class MyGameManager : NetworkBehaviour {
      GameObject taskPlane;
      GameObject subtaskPlane;
      GameObject cylinder;
+
+    GameObject videoScreen;
+    VideoPlayer videoPlayer;
 
     bool tracked;
     bool materialChanged;
@@ -67,6 +71,13 @@ public class MyGameManager : NetworkBehaviour {
         qrScanDialog = GameObject.Find("QRScanDialog");
         qrScanDialog.SetActive(false);
         initPCBparts();
+
+        videoScreen = GameObject.Find("Videoscreen");
+        videoPlayer= videoScreen.AddComponent<UnityEngine.Video.VideoPlayer>();
+
+        videoPlayer.url = "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4";
+        videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
+
 
         SetWorldObjectsActive(false);
 

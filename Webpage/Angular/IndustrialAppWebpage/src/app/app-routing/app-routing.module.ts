@@ -1,4 +1,4 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AddPartComponent} from '@app/Part/add-part/add-part.component'
 import {EditPartComponent} from '@app/Part/edit-part/edit-part.component'
@@ -8,7 +8,8 @@ import {AddContainerContentComponent} from '@app/ContainerContent/add-container-
 import {EditContainerContentComponent} from '@app/ContainerContent/edit-container-content/edit-container-content.component'
 import {AddProcessComponent} from '@app/Process/add-process/add-process.component'
 import {EditProcessComponent} from '@app/Process/edit-process/edit-process.component'
-
+import {AddUserComponent} from '@app/Pages/User/add-user/add-user.component'
+import {EditUserComponent} from '@app/Pages/User/edit-user/edit-user.component'
 import{AddStepComponent} from '@app/Pages/Step/add-step/add-step.component'
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path: 'EditContainerContent', component: EditContainerContentComponent},
   {path: 'AddProcess', component: AddProcessComponent},
   {path: 'EditProcess', component: EditProcessComponent},
-  {path: 'AddStep', component: AddStepComponent}
+  {path: 'AddStep', component: AddStepComponent},
+  {path: 'AddUser', component: AddUserComponent},
+  {path: 'EditUser', component: EditUserComponent}
 ];
 
 @NgModule({

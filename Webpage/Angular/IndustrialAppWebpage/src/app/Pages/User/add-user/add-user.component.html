@@ -1,0 +1,21 @@
+<div class="expand-collapse-content" id="collapse1" [ngbCollapse]="containerReady">
+  <h2 class="mt-5 mb-4">Add new user</h2>
+  <div class="input-group mb-4">
+      <div class="input-group-prepend" >
+        <span class="input-group-text" >Name:</span>
+      </div>
+      <input  type="text"  class="form-control" #nameTF [(ngModel)]="name">
+  </div>
+  <div class="input-group mb-4">
+      <div class="input-group-prepend" >
+        <span class="input-group-text" >Unique identity:</span>
+      </div>
+      <input  type="text"  class="form-control" #idTF [(ngModel)]="identity">
+  </div>
+  <div class="mb-4">
+      <span class="input-group-text mb-4">Image target:</span>
+      <qrcode #QRCode [qrdata]="identity" [size]="256" [level]="'M'" allowEmptyString="true"></qrcode>    
+  </div>
+  <button type="button" class="btn btn-primary" (click)="onAddButtonPressed(nameTF.value,idTF.value)" >
+    Add</button>
+</div>
