@@ -207,6 +207,7 @@ namespace HoloToolkit.Unity.InputModule
 
         private IEnumerator FinishStopRecording()
         {
+#if !UNITY_IOS
             while (dictationRecognizer.Status == SpeechSystemStatus.Running)
             {
                 yield return null;
@@ -214,9 +215,12 @@ namespace HoloToolkit.Unity.InputModule
 
             PhraseRecognitionSystem.Restart();
             isTransitioning = false;
+#else
+            yield return null;
+#endif
         }
 
-        #region Dictation Recognizer Callbacks
+#region Dictation Recognizer Callbacks
 #if UNITY_WSA || UNITY_STANDALONE_WIN
 
         /// <summary>
@@ -279,9 +283,9 @@ namespace HoloToolkit.Unity.InputModule
             dictationResult = string.Empty;
         }
 #endif
-        #endregion // Dictation Recognizer Callbacks
+#endregion // Dictation Recognizer Callbacks
 
-        #region IInputSource Implementation
+#region IInputSource Implementation
 
         public bool TryGetSourceKind(uint sourceId, out InteractionSourceInfo sourceKind)
         {
@@ -363,6 +367,6 @@ namespace HoloToolkit.Unity.InputModule
             return false;
         }
 
-        #endregion // IInputSource Implementation
+#endregion // IInputSource Implementation
     }
 }

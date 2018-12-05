@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using TallboyServer.Areas.HelpPage.ModelDescriptions;
-using TallboyServer.Areas.HelpPage.Models;
+using IndustrialAppServer.Areas.HelpPage.ModelDescriptions;
+using IndustrialAppServer.Areas.HelpPage.Models;
 
-namespace TallboyServer.Areas.HelpPage.Controllers
+namespace IndustrialAppServer.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

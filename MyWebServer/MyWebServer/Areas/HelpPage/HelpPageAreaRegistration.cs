@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace TallboyServer.Areas.HelpPage
+namespace IndustrialAppServer.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

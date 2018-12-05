@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Managers;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Managers;
 
-namespace TallboyServer.Controllers
+namespace IndustrialAppServer.Controllers
 {
     public class TaskController : ApiController
     {

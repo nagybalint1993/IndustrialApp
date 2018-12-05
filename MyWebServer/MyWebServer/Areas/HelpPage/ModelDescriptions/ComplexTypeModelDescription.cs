@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace TallboyServer.Areas.HelpPage.ModelDescriptions
+namespace IndustrialAppServer.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

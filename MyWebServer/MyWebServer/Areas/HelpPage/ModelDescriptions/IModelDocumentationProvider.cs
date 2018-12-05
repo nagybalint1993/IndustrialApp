@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace TallboyServer.Areas.HelpPage.ModelDescriptions
+namespace IndustrialAppServer.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

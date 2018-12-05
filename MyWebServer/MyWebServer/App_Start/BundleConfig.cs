@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TallboyServer
+namespace IndustrialAppServer
 {
     public class BundleConfig
     {

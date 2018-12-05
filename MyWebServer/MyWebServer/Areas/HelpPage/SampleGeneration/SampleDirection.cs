@@ -1,4 +1,4 @@
-namespace TallboyServer.Areas.HelpPage
+namespace IndustrialAppServer.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

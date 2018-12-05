@@ -1,0 +1,13 @@
+<p>
+Upload video
+</p>
+<input type="file" name="photo" ng2FileSelect [uploader]="uploader" />
+
+<button type="button" class="btn  btn-s" 
+  (click)="uploader.uploadAll()" 
+  [disabled]="!uploader.getNotUploadedItems().length" >
+      Upload video
+</button>
+<div class="mb-4">
+
+</div>

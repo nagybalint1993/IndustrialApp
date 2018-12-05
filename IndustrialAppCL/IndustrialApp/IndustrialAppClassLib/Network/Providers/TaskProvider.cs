@@ -7,11 +7,11 @@ using IndustrialApp.TestData;
 
 namespace IndustrialApp.Network.Providers
 {
-    class TaskProvider
+    public class TaskProvider : AppProvider<Task>
     {
-        internal void GetTasksAsync(Action<List<Models.Task>> getTasksCallback)
+        public TaskProvider(string endpoint):base(endpoint)
         {
-            getTasksCallback(new Data().TaskList);
+            
         }
     }
 }

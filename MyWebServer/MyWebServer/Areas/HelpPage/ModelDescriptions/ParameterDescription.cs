@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace TallboyServer.Areas.HelpPage.ModelDescriptions
+namespace IndustrialAppServer.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

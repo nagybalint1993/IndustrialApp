@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {  BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 import { AppComponent } from '@app/app.component';
 import { NavbarComponent } from '@app/navbar/navbar.component';
@@ -29,6 +30,10 @@ import { AddStepComponent } from './Pages/Step/add-step/add-step.component';
 import { EditStepComponent } from './Pages/Step/edit-step/edit-step.component';
 import { StepService } from '@app/Services/StepService/step.service';
 import { ProcessService } from '@app/Services/ProcessService/process.service';
+import { AddUserComponent } from './Pages/User/add-user/add-user.component';
+import { EditUserComponent } from './Pages/User/edit-user/edit-user.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import {UploadVideoComponent } from './Pages/Video/upload-video/upload-video.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,11 @@ import { ProcessService } from '@app/Services/ProcessService/process.service';
     AddProcessComponent,
     EditProcessComponent,
     AddStepComponent,
-    EditStepComponent
+    EditStepComponent,
+    AddUserComponent,
+    EditUserComponent,
+    UploadVideoComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
@@ -54,7 +63,8 @@ import { ProcessService } from '@app/Services/ProcessService/process.service';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularDraggableModule
+    AngularDraggableModule,
+    QRCodeModule
   ],
   providers: [
     AppConfig,

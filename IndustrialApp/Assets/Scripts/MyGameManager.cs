@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using IndustrialApp.Models;
 using IndustrialApp.Presenter;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.Video;
 using Vuforia;
 
-public class MyGameManager : MonoBehaviour {
+public class MyGameManager : NetworkBehaviour {
     Presenter presenter;
 
     GameObject titleTextField;
-    GameObject descriptionTextField;
-    GameObject taskTitleTextField;
-    GameObject taskDescriptionTextField;
-    GameObject readySphere;
-    GameObject qrScanDialog;
-    GameObject componentReadyParent;
-    GameObject taskPlane;
-    GameObject subtaskPlane;
-    GameObject cylinder;
+     GameObject descriptionTextField;
+     GameObject taskTitleTextField;
+     GameObject taskDescriptionTextField;
+     GameObject readySphere;
+     GameObject qrScanDialog;
+     GameObject componentReadyParent;
+     GameObject taskPlane;
+     GameObject subtaskPlane;
+     GameObject cylinder;
+    GameObject videoscreen;
+
+    GameObject videoScreen;
+    VideoPlayer videoPlayer;
 
     bool tracked;
     bool materialChanged;
@@ -40,8 +46,12 @@ public class MyGameManager : MonoBehaviour {
     //TEST parameter
     int testcounter;
 
+    //MULTI
+    public bool isHost;
+
     void Start()
     {
+        
         presenter = Presenter.GetPresenter();
         presenter.Start();
 
@@ -57,22 +67,46 @@ public class MyGameManager : MonoBehaviour {
         descriptionTextField = GameObject.Find("SubtaskDescription");
         taskTitleTextField = GameObject.Find("TaskTitle");
         taskDescriptionTextField = GameObject.Find("TaskDescription");
+        videoscreen = GameObject.Find("Videoscreen");
         containerPartMeshes = new Dictionary<int, Renderer>();
         PCBparts = new Dictionary<int, GameObject>();
         qrScanDialog = GameObject.Find("QRScanDialog");
         qrScanDialog.SetActive(false);
         initPCBparts();
 
+        videoScreen = GameObject.Find("Videoscreen");
+        videoPlayer= videoScreen.AddComponent<UnityEngine.Video.VideoPlayer>();
+
+        videoPlayer.url = "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4";
+        videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
+
+
         SetWorldObjectsActive(false);
 
         VuforiaRuntime.Instance.InitVuforia();
-        VuforiaBehaviour.Instance.enabled = true;
-        VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
-        //var objectTracker=  TrackerManager.Instance.GetTracker<ObjectTracker>();
-        //objectTracker.Start();
+
+
 
         testcounter = 0;
 
+
+    }
+
+    public void StartVuforia()
+    {
+        //VuforiaRuntime.Instance.InitVuforia();
+        VuforiaBehaviour.Instance.enabled = true;
+        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        TrackerManager.Instance.GetTracker<ObjectTracker>().Start();
+        audioSource.Play();
+    }
+
+    public void StopVuforia()
+    {
+        VuforiaBehaviour.Instance.enabled = false;
+        //VuforiaARController.Instance.RegisterVuforiaStartedCallback(StartObjectTracker);
+        TrackerManager.Instance.GetTracker<ObjectTracker>().Stop();
+        audioSource.Play();
 
     }
 
@@ -108,22 +142,17 @@ public class MyGameManager : MonoBehaviour {
     }
     private void Update()
     {
+        if (!hasAuthority)
+            return;
         if (tracked)
         {
             if (presenter.containerPartChanged)
             {
-                OnContainerPartChanged();
-                materialChanged = false;
+                CmdOnContainerPartChanged();
             }
             if (presenter.TypeIsReady && !materialChanged )
             {
-                readySphere.SendMessageUpwards("SetMaterial", 1, SendMessageOptions.DontRequireReceiver);
-                containerPartMeshes[currentContainerPart.Id].material = green;
-                materialChanged = true;
-                if(currentElement != 2 && (currentElement <8))
-                {
-                    audioSource.Play();
-                }
+                CmdOnPartFound();
             }
         }
         
@@ -138,7 +167,38 @@ public class MyGameManager : MonoBehaviour {
         */
     }
 
-    public void OnContainerPartChanged()
+    public void SetTypeReady()
+    {
+        presenter.TypeIsReady = true;
+    }
+
+    [Command]
+    public void CmdOnPartFound()
+    {
+        RpcOnPartFound();
+    }
+
+    [ClientRpc]
+    private void RpcOnPartFound()
+    {
+        presenter.TypeIsReady = true;
+        readySphere.SendMessageUpwards("SetMaterial", 1, SendMessageOptions.DontRequireReceiver);
+        containerPartMeshes[currentContainerPart.Id].material = green;
+        materialChanged = true;
+        if (currentElement != 2 && (currentElement < 8))
+        {
+            audioSource.Play();
+        }
+    }
+
+    [Command]
+    public void CmdOnContainerPartChanged()
+    {
+        RpcOnContainerPartChanged();
+    }
+
+    [ClientRpc]
+    public void RpcOnContainerPartChanged()
     {
         UpdateDescriptionTextField(presenter.currentTaskElement.Description);
         UpdateTitleTextField(presenter.currentTaskElement.Name);
@@ -159,6 +219,7 @@ public class MyGameManager : MonoBehaviour {
             componentReadyParent.transform.localScale = new Vector3(0, 0, 0);
             presenter.TypeIsReady = true;
         }
+        materialChanged = false;
     }
 
     public void OnResetButtonPressed()
@@ -179,7 +240,20 @@ public class MyGameManager : MonoBehaviour {
         currentElement = 0;
     }
 
+
     public void OnNextButtonPressed()
+    {
+        CmdOnNextButtonPressed();
+    }
+
+    [Command]
+    public void CmdOnNextButtonPressed()
+    {
+        RpcOnNextButtonPressed();
+    }
+
+    [ClientRpc]
+    public void RpcOnNextButtonPressed()
     {
         if (presenter.TypeIsReady)
         {
@@ -213,12 +287,26 @@ public class MyGameManager : MonoBehaviour {
         }
         else
         {
-            qrScanDialog.SetActive(true);
-        }
+            if (hasAuthority)
+            {
+                qrScanDialog.SetActive(true);
+            }
 
+        }
     }
 
     public void OnBackButtonPressed()
+    {
+        CmdOnBackButtonPressed();
+    }
+    [Command]
+    public void CmdOnBackButtonPressed()
+    {
+        RpcOnBackButtonPressed();
+    }
+
+    [ClientRpc]
+    public void RpcOnBackButtonPressed()
     {
         presenter.DoPreviousTaskElement();
         PCBparts[currentElement].SetActive(false);
@@ -260,7 +348,9 @@ public class MyGameManager : MonoBehaviour {
         SetWorldObjectsActive(true);
         taskTitleTextField.GetComponent<TextMesh>().text = presenter.currentTask.Name;
         taskDescriptionTextField.GetComponent<TextMesh>().text = SplitStringToLength( presenter.currentTask.Description, 30);
-        AddCubesToImageTarget(targetName);
+        GameObject imageTargetObject = GameObject.Find(targetName);
+
+        CmdGenerateContainerParts(targetName, imageTargetObject.transform.localPosition, imageTargetObject.transform.rotation, imageTargetObject.transform.localScale);
         tracked = true;
     }
 
@@ -269,10 +359,14 @@ public class MyGameManager : MonoBehaviour {
         if (targetName == "20ede1ea-44bc-4cc9-9000-94bdc66cc5b0")
         {
             GameObject imageTargetObject = GameObject.Find(targetName);
-            parent.transform.parent = imageTargetObject.transform;
-            parent.transform.localPosition = Vector3.zero;
-            parent.transform.localRotation = Quaternion.identity;
-            parent.transform.localScale = Vector3.one;
+            if ((parent.transform.position - imageTargetObject.transform.position).magnitude > 0.3)
+            {
+                parent.transform.parent = imageTargetObject.transform;
+                parent.transform.localPosition = Vector3.zero;
+                parent.transform.localRotation = Quaternion.identity;
+                parent.transform.localScale = Vector3.one;
+            }
+
         }
     }
     public void TypeFound(string targetName)
@@ -280,21 +374,41 @@ public class MyGameManager : MonoBehaviour {
         presenter.TypeFound(targetName);
     }
 
-    public void AddCubesToImageTarget(string s)
+    [Command]
+    public void CmdGenerateContainerParts(String containerName,  Vector3 serverPosition, Quaternion serverRotation, Vector3 serverScale)
+    {
+        RpcGenerate(containerName, serverPosition, serverRotation, serverScale);
+    }
+
+    [ClientRpc]
+    void RpcGenerate(String containerName, Vector3 serverPosition,Quaternion serverRotation,Vector3 serverScale)
+    {
+        GameObject temp = new GameObject("temo");
+        var worldRoot = GameObject.Find("WorldRoot");
+        temp.transform.parent = worldRoot.transform;
+        temp.transform.localPosition = serverPosition;
+        temp.transform.localRotation = serverRotation;
+        var clientPos = temp.transform.position;
+        var clientRot = temp.transform.rotation;
+        AddCubesToImageTarget(containerName, clientPos,clientRot,serverScale);
+        Destroy(temp);
+    }
+
+    public void AddCubesToImageTarget(string s, Vector3 clientPosition, Quaternion clientRotation, Vector3 clientScale)
     {
         Debug.Log("Generate !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if (s == "20ede1ea-44bc-4cc9-9000-94bdc66cc5b0")
         {
             List<ContainerPart> cplist = presenter.GetContainerParts(s);
-            GameObject imageTargetObject = GameObject.Find(s);
+            
 
-            var qrSize = imageTargetObject.transform.localScale.x;
+            var qrSize = clientScale.x;
 
             parent = new GameObject("parent");
-            parent.transform.parent = imageTargetObject.transform;
-            parent.transform.localPosition = Vector3.zero;
-            parent.transform.localRotation = Quaternion.identity;
-            parent.transform.localScale = Vector3.one;
+            //parent.transform.parent = imageTargetObject.transform;
+            parent.transform.localPosition = clientPosition;
+            parent.transform.localRotation = clientRotation;
+            parent.transform.localScale = clientScale;
 
             foreach (ContainerPart cp in cplist)
             {
@@ -363,9 +477,22 @@ public class MyGameManager : MonoBehaviour {
             cylinder.transform.parent = parent.transform;
             cylinder.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
             cylinder.transform.localPosition = new Vector3(6.325f, 2.5f, -0.345f);
-            cylinder.transform.parent = null;
 
-            parent.transform.parent = null;
+            videoscreen.transform.parent = parent.transform;
+            videoscreen.transform.localRotation = Quaternion.Euler(-68f, 270f, -90f);
+            videoscreen.transform.localPosition = new Vector3(9.2f, 0.5f, 1.97f);
+            //cylinder.transform.parent = null;
+
+            var wordroot = GameObject.Find("WorldRoot");
+            if(wordroot!= null)
+            {
+                parent.transform.parent = wordroot.transform;
+            }
+            else
+            {
+               parent.transform.parent = null;
+            }
+
         }
     }
 

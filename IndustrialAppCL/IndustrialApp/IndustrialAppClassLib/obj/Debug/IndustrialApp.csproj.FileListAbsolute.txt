@@ -4,3 +4,17 @@ F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csproj.CoreCompileInputs.cache
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.dll
 F:\Tallboy\Tallboy\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csprojAssemblyReference.cache
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csproj.CoreCompileInputs.cache
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialAppClassLib.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\IndustrialAppClassLib.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\IndustrialAppClassLib.pdb
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\Newtonsoft.Json.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\System.Net.Http.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\System.Security.Cryptography.Algorithms.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\System.Security.Cryptography.Encoding.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\System.Security.Cryptography.Primitives.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\bin\Debug\Newtonsoft.Json.xml
+F:\IndustrialApp\IndustrialAppCL\IndustrialApp\IndustrialAppClassLib\obj\Debug\IndustrialApp.csproj.CopyComplete

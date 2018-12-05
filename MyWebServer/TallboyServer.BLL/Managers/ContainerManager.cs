@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Database;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Database;
 
-namespace TallboyServer.BLL.Managers
+namespace IndustrialAppServer.BLL.Managers
 {
     public class ContainerManager
     {

@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Database;
-using TallboyServer.BLL.Exceptions;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Database;
+using IndustrialAppServer.BLL.Exceptions;
 
-namespace TallboyServer.BLL.Managers
+namespace IndustrialAppServer.BLL.Managers
 {
     public class ContainerPartManager
     {
-        public TallboyBLL.Models.ContainerPart GetContainerPart(int id)
+        public IndustrialAppServer.Models.ContainerPart GetContainerPart(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -34,7 +34,7 @@ namespace TallboyServer.BLL.Managers
                 
         }
 
-        public List<TallboyBLL.Models.ContainerPart> GetContainerParts()
+        public List<IndustrialAppServer.Models.ContainerPart> GetContainerParts()
         {
             using (var ctx = new TallboyDBContext())
             {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 
-namespace TallboyServer
+namespace IndustrialAppServer
 {
     public static class WebApiConfig
     {

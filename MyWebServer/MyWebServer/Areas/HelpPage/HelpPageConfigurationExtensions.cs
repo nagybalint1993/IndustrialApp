@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using TallboyServer.Areas.HelpPage.ModelDescriptions;
-using TallboyServer.Areas.HelpPage.Models;
+using IndustrialAppServer.Areas.HelpPage.ModelDescriptions;
+using IndustrialAppServer.Areas.HelpPage.Models;
 
-namespace TallboyServer.Areas.HelpPage
+namespace IndustrialAppServer.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

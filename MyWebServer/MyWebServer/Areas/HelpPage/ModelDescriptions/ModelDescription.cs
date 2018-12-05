@@ -1,6 +1,6 @@
 using System;
 
-namespace TallboyServer.Areas.HelpPage.ModelDescriptions
+namespace IndustrialAppServer.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

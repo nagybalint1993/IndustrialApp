@@ -56,6 +56,7 @@
             <option *ngFor="let type of types" [value]="type.id">{{type.name}} </option>         
           </select>
     </div>
+    <app-upload-video></app-upload-video>
   <button type="submit" class="btn btn-primary" (click)="onAddButtonPressed()">Add</button>
 
 </form>

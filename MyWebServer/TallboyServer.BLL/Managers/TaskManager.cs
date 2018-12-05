@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Database;
-using TallboyServer.BLL.Exceptions;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Database;
+using IndustrialAppServer.BLL.Exceptions;
 
-namespace TallboyServer.BLL.Managers
+namespace IndustrialAppServer.BLL.Managers
 {
     public class TaskManager
     {
-        public TallboyBLL.Models.Task GetTask(int id)
+        public IndustrialAppServer.Models.Task GetTask(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -24,7 +24,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public TallboyBLL.Models.Task AddTask(TallboyBLL.Models.Task newTask)
+        public IndustrialAppServer.Models.Task AddTask(IndustrialAppServer.Models.Task newTask)
         {
             using(var ctx = new TallboyDBContext())
             {
@@ -34,7 +34,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public TallboyBLL.Models.Task UpdateTask(int id, TallboyBLL.Models.Task newTask)
+        public IndustrialAppServer.Models.Task UpdateTask(int id, IndustrialAppServer.Models.Task newTask)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -46,7 +46,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public TallboyBLL.Models.Task DeleteTask(int id)
+        public IndustrialAppServer.Models.Task DeleteTask(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -57,7 +57,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public List<TallboyBLL.Models.Task> GetTask()
+        public List<IndustrialAppServer.Models.Task> GetTask()
         {
             using (var ctx = new TallboyDBContext())
             {

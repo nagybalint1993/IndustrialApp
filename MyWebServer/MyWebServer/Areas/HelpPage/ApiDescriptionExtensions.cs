@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace TallboyServer.Areas.HelpPage
+namespace IndustrialAppServer.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

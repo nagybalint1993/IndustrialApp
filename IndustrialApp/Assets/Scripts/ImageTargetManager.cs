@@ -31,27 +31,23 @@ public class ImageTargetManager : MonoBehaviour, ITrackableEventHandler{
 
 
 
-    public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
+public void OnTrackableStateChanged(
+    TrackableBehaviour.Status previousStatus,
+    TrackableBehaviour.Status newStatus)
+{
+    if(newStatus == TrackableBehaviour.Status.TRACKED && !tracked)
     {
-        if(newStatus == TrackableBehaviour.Status.TRACKED && !tracked)
-        {
-            targetName = mTrackableBehaviour.name;
-            Debug.Log("targetName: "+ mTrackableBehaviour.TrackableName);
-            Debug.Log("name: "+ mTrackableBehaviour.name);
-
-            
-            tracked = true;
-            
-            myGameManager.SendMessageUpwards("TypeFound", targetName, SendMessageOptions.DontRequireReceiver);
-            myGameManager.SendMessageUpwards("OnContainerFound",targetName ,SendMessageOptions.DontRequireReceiver); 
-        }
-        if(newStatus == TrackableBehaviour.Status.TRACKED)
-        {
-            Debug.Log("targetName: " + mTrackableBehaviour.TrackableName);
-            Debug.Log("name: " + mTrackableBehaviour.name);
-            myGameManager.SendMessageUpwards("UpdateContainer", targetName, SendMessageOptions.DontRequireReceiver);
-        }
+        targetName = mTrackableBehaviour.name;
+        tracked = true;
+        myGameManager.SendMessageUpwards("OnContainerFound",
+            targetName,SendMessageOptions.DontRequireReceiver); 
     }
+    if(newStatus == TrackableBehaviour.Status.TRACKED)
+    {
+        myGameManager.SendMessageUpwards("UpdateContainer", 
+            targetName,SendMessageOptions.DontRequireReceiver);
+    }
+}
 
 
     private string GetDescription()

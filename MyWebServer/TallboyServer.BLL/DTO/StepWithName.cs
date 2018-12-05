@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TallboyServer.BLL.DTO
+namespace IndustrialAppServer.BLL.DTO
 {
     public class StepWithName
     {

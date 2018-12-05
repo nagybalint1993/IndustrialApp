@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Database;
-using TallboyServer.BLL.DTO;
-using TallboyServer.BLL.Exceptions;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Database;
+using IndustrialAppServer.BLL.DTO;
+using IndustrialAppServer.BLL.Exceptions;
 
-namespace TallboyServer.BLL.Managers
+namespace IndustrialAppServer.BLL.Managers
 {
     public class TaskElementManager
     {
-        public List<TallboyBLL.Models.TaskElement> GetTaskElementToTask(int id)
+        public List<IndustrialAppServer.Models.TaskElement> GetTaskElementToTask(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -24,7 +24,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public TallboyBLL.Models.TaskElement GetTaskElement(int id)
+        public IndustrialAppServer.Models.TaskElement GetTaskElement(int id)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -116,7 +116,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public List<TallboyBLL.Models.TaskElement> GetTaskElement()
+        public List<IndustrialAppServer.Models.TaskElement> GetTaskElement()
         {
             using (var ctx = new TallboyDBContext())
             {

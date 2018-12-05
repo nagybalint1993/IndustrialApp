@@ -4,11 +4,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TallboyBLL.Models;
-using TallboyServer.BLL.Database;
-using TallboyServer.BLL.Exceptions;
+using IndustrialAppServer.Models;
+using IndustrialAppServer.BLL.Database;
+using IndustrialAppServer.BLL.Exceptions;
 
-namespace TallboyServer.BLL.Managers
+namespace IndustrialAppServer.BLL.Managers
 {
     public class TypeManager
     {
@@ -18,18 +18,18 @@ namespace TallboyServer.BLL.Managers
             {
                 if (!ctx.Types.Any())
                 {
-                    ctx.Types.AddRange(new List<TallboyBLL.Models.Type>
+                    ctx.Types.AddRange(new List<IndustrialAppServer.Models.Type>
                     {
-                        new TallboyBLL.Models.Type{Name= "Szimering", Description= "CORTECO 8,8/12,2"},
-                        new TallboyBLL.Models.Type{Name= "Akkumulátor", Description= "Bosch"},
-                        new TallboyBLL.Models.Type{Name= "Kerékcsapágy", Description= "FEBI Kúpgörgős csapágy"}
+                        new IndustrialAppServer.Models.Type{Name= "Szimering", Description= "CORTECO 8,8/12,2"},
+                        new IndustrialAppServer.Models.Type{Name= "Akkumulátor", Description= "Bosch"},
+                        new IndustrialAppServer.Models.Type{Name= "Kerékcsapágy", Description= "FEBI Kúpgörgős csapágy"}
                     });
                     ctx.SaveChanges();
                 }
             }
         }
 
-        public TallboyBLL.Models.Type AddType(TallboyBLL.Models.Type type)
+        public IndustrialAppServer.Models.Type AddType(IndustrialAppServer.Models.Type type)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -49,7 +49,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public void UpdateType(int id, TallboyBLL.Models.Type newType)
+        public void UpdateType(int id, IndustrialAppServer.Models.Type newType)
         {
             using (var ctx = new TallboyDBContext())
             {
@@ -66,7 +66,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public List<TallboyBLL.Models.Type> GetTypeList()
+        public List<IndustrialAppServer.Models.Type> GetTypeList()
         {
             GenerateTestData();
             using (var ctx= new TallboyDBContext())
@@ -79,7 +79,7 @@ namespace TallboyServer.BLL.Managers
             }
         }
 
-        public TallboyBLL.Models.Type GetType(int id)
+        public IndustrialAppServer.Models.Type GetType(int id)
         {
             GenerateTestData();
             using (var ctx = new TallboyDBContext())

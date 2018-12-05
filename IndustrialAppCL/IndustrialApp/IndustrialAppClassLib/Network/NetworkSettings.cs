@@ -7,7 +7,7 @@ namespace IndustrialApp.Network
 {
     class NetworkSettings
     {
-        private const String apiURL = "http://localhost:49184/api/";
+        public const String ApiURL = "http://localhost:49184/api/";
 
     }
 }

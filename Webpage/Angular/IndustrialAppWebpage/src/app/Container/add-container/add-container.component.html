@@ -27,11 +27,11 @@
       <div class="input-group-prepend" >
           <span class="input-group-text" >Width (cm):</span>
       </div>
-      <input  type="text"  class="form-control" >
+      <input  type="number"  class="form-control" [(ngModel)]="imageTargetWidth">
       <div class="input-group-prepend" >
           <span class="input-group-text" >Height (cm):</span>
       </div>
-      <input  type="text"  class="form-control" >
+      <input  type="number"  class="form-control" [(ngModel)]="imageTargetHeight" >
   </div>
   </div>
 
@@ -44,4 +44,4 @@
 
 
 
-<app-add-container-part [container]="currentContainer" [imageTarget]="imageUrl"></app-add-container-part>
+<app-add-container-part [container]="currentContainer" [imageTarget]="imageUrl" [imageTargetConcreteWidth]="imageTargetWidth" [imageTargetConcreteHeight]="imageTargetHeight"></app-add-container-part>

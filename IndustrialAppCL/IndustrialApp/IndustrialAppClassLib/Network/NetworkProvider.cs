@@ -20,7 +20,7 @@ namespace IndustrialApp.Network
             ContainerPartContentProvider = new ContainerPartContentProvider();
             ContainerPartProvider = new ContainerPartProvider();
             TaskElementProvider = new TaskElementProvider();
-            TaskProvider = new TaskProvider();
+            //TaskProvider = new TaskProvider();
             TypeProvider = new TypeProvider();
         }
 
@@ -47,7 +47,7 @@ namespace IndustrialApp.Network
 
         public void GetTasksAsync(Action<List<Models.Task>> getTasksCallback)
         {
-            TaskProvider.GetTasksAsync(getTasksCallback);
+            //TaskProvider.GetTasksAsync(getTasksCallback);
         }
 
         public void GetTypeAsync(Action<Models.Type> getTypeAsyncCallback, int typeId)

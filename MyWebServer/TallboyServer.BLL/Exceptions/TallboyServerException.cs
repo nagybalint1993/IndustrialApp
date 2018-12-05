@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TallboyServer.BLL.Exceptions
+namespace IndustrialAppServer.BLL.Exceptions
 {
     class TallboyServerException : Exception
     {

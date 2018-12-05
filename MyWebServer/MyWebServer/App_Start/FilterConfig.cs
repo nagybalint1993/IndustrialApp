@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace TallboyServer
+namespace IndustrialAppServer
 {
     public class FilterConfig
     {

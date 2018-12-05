@@ -88,8 +88,8 @@ Shader "MixedRealityToolkit/Standard"
 
             CGPROGRAM
 
-            #pragma target 5.0
-            #pragma only_renderers d3d11
+            //#pragma target 5.0
+            //#pragma only_renderers d3d11
             #pragma multi_compile_instancing
             #pragma multi_compile _ LIGHTMAP_ON
             #pragma vertex vert

@@ -14,6 +14,9 @@ export class AddContainerComponent implements OnInit {
   imageUrl: string = "";
   containerReady:boolean=false;
 
+  imageTargetWidth:number;
+  imageTargetHeight:number;
+
 
   constructor(private toastr: ToastrService, private containerservice: ContainerService) { }
 
@@ -22,8 +25,9 @@ export class AddContainerComponent implements OnInit {
 
   onAddButtonPressed(pname, pdescription){
     var container:Container=({name:pname, description:pdescription, id:0})
-    //this.containerservice.post(container).subscribe(c => this.onContainerAdded(c));
-    this.onContainerAdded(container);
+
+    this.containerservice.post(container).subscribe(c => this.onContainerAdded(c));
+    // this.onContainerAdded(container);
   }
 
   onContainerAdded(container:Container){

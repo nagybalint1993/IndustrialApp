@@ -29,4 +29,8 @@ export class ContainerPartService extends AppService<ContainerPart>{
     return this.http.get<ContainerPart[]>(this.config.apiUrl + this.config.getPartsToContainerEndpoint + id,httpoption )
  }
 
+  postVideo(video:File):Observable<any>{
+    return this.http.post<any>(this.config.apiUrl + "taskElement/video" ,httpoption)
+  }
+
 }

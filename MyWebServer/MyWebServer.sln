@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallboyServer", "MyWebServer\TallboyServer.csproj", "{6CA64CE4-4D78-4308-975F-D93710088EB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialAppServer", "MyWebServer\IndustrialAppServer.csproj", "{6CA64CE4-4D78-4308-975F-D93710088EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TallboyServer.BLL", "TallboyServer.BLL\TallboyServer.BLL.csproj", "{A7E4EA73-7DBE-4DA5-8C70-9C2A1E64FC98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndustrialAppServer.BLL", "TallboyServer.BLL\IndustrialAppServer.BLL.csproj", "{A7E4EA73-7DBE-4DA5-8C70-9C2A1E64FC98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
