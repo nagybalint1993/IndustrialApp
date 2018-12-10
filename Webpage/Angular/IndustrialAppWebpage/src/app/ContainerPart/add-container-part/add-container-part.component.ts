@@ -67,10 +67,7 @@ export class AddContainerPartComponent implements OnInit {
   }
 
   onTargetButtonPressed(){
-    console.log("ConcreteWidth:" + this.imageTargetConcreteWidth)
     var it= document.getElementById("imageTarget");
-    console.log("OffsetHeight: " + it.offsetHeight);
-    console.log("OffsetWidth: " + it.offsetWidth);
     this.imageTargetHeight= it.offsetHeight;
     this.imageTargetWidth= it.offsetHeight;
 
@@ -79,9 +76,9 @@ export class AddContainerPartComponent implements OnInit {
       var val= res[1].split("px");
       var x= parseInt(val[0],10);
       var y= parseInt(val[1].slice(2),10)
-      console.log("Transform x: " + x);
-      console.log("Transform y: " + y);
+      //x coordinate
       this.imageTargetPosX=x;
+      //y coordinate
       this.imageTargetPosY=y;
     }
     console.log("Transform: " + it.style.transform);
@@ -114,15 +111,20 @@ export class AddContainerPartComponent implements OnInit {
   }
 
   createContainerPart(name:string){
-    var partConcreteWidth= this.currentPartWidth/ this.imageTargetWidth * this.imageTargetConcreteWidth/100;
+    var partConcreteWidth= this.currentPartWidth/ this.imageTargetWidth * 
+    this.imageTargetConcreteWidth/100;
     console.log("Width: " + partConcreteWidth)
-    var partConcreteHeight= this.currentPartHeight/ this.imageTargetHeight * this.imageTargetConcreteHeight/100;
+    var partConcreteHeight= this.currentPartHeight/ this.imageTargetHeight *
+     this.imageTargetConcreteHeight/100;
     console.log("Height: " + partConcreteHeight)
 
-    var partPosY= ((-1*(this.currentPartPosY - this.imageTargetPosY)*(this.imageTargetConcreteHeight/this.imageTargetHeight))-partConcreteHeight)/100;
+    var partPosY= ((-1*(this.currentPartPosY - this.imageTargetPosY)*
+    (this.imageTargetConcreteHeight/this.imageTargetHeight))
+    -partConcreteHeight)/100;
     console.log("part eltolás y: " + partPosY);
 
-    var partPosX= (-1*(this.currentPartPosX -this.imageTargetPosX)*(this.imageTargetConcreteWidth/this.imageTargetWidth))/100;
+    var partPosX= (-1*(this.currentPartPosX -this.imageTargetPosX)*
+    (this.imageTargetConcreteWidth/this.imageTargetWidth))/100;
     console.log("part eltolás: x" + partPosX);
     
     var containerPart= new ContainerPart();
@@ -133,7 +135,7 @@ export class AddContainerPartComponent implements OnInit {
     containerPart.yCoordinate=partPosY;
     containerPart.name= name;
     
-    //this.containerPartService.post(containerPart);
+    this.containerPartService.post(containerPart);
   }
 
 }

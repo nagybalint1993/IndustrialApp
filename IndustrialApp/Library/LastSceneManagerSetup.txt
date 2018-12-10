@@ -1,5 +1,4 @@
 sceneSetups:
-- path: Assets/HoloToolkit/HoloToolkit-Examples/SpectatorView/Scenes/SpectatorViewExample
-    1.unity
+- path: Assets/FirstScene.unity
   isLoaded: 1
   isActive: 1

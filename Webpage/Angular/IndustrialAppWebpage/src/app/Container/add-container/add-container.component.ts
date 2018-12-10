@@ -17,6 +17,8 @@ export class AddContainerComponent implements OnInit {
   imageTargetWidth:number;
   imageTargetHeight:number;
 
+  imageID:number;
+
 
   constructor(private toastr: ToastrService, private containerservice: ContainerService) { }
 
@@ -24,7 +26,7 @@ export class AddContainerComponent implements OnInit {
   }
 
   onAddButtonPressed(pname, pdescription){
-    var container:Container=({name:pname, description:pdescription, id:0})
+    var container:Container=({name:pname, description:pdescription, id:0, imageId: this.imageID})
 
     this.containerservice.post(container).subscribe(c => this.onContainerAdded(c));
     // this.onContainerAdded(container);
@@ -47,7 +49,7 @@ export class AddContainerComponent implements OnInit {
     }
     reader.readAsDataURL(this.fileToUpload);
 
-    //this.containerservice.postImage(this.fileToUpload).subscribe(() => console.log("image posted"))
+    this.containerservice.postImage(this.fileToUpload).subscribe(image => this.imageID= image.id)
   }
 
 }

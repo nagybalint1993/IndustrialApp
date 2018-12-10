@@ -10,21 +10,9 @@ namespace IndustrialAppServer.BLL.Managers
 {
     public class ContainerManager
     {
-        public void generateTestData()
-        {
-            using (var ctx = new TallboyDBContext())
-            {
-                if (!ctx.Containers.Any())
-                {
-                    ctx.Containers.Add(new Container { Name = "test", Description = "desc", Id = 1 });
-                    ctx.SaveChanges();
-                }
-            }
-        }
 
         public IEnumerable<Container> GetContainerList()
         {
-            generateTestData();
             using(var ctx = new TallboyDBContext())
             {
                 var list = ctx.Containers.ToList();
@@ -71,6 +59,7 @@ namespace IndustrialAppServer.BLL.Managers
 
                 container.Name = newContainer.Name;
                 container.Description = newContainer.Description;
+                container.ContainerImageId = newContainer.ContainerImageId;
                 ctx.SaveChanges();
                 return container;
             }

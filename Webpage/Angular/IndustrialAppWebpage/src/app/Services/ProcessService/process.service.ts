@@ -16,5 +16,4 @@ export class ProcessService extends AppService<Process>{
       config.processEndpoint
     );
   }
-
 }

@@ -10,6 +10,7 @@ using Owin;
 using IndustrialAppServer;
 using IndustrialAppServer.BLL.Database;
 using IndustrialAppServer.BLL.Managers;
+using System.Web.Http.Cors;
 
 [assembly: OwinStartup(typeof(MyWebServer.App_Start.Startup))]
 
@@ -21,6 +22,8 @@ namespace MyWebServer.App_Start
         public void Configuration(IAppBuilder app)
         {
             HttpConfiguration httpConfig = new HttpConfiguration();
+            var corsAttr = new EnableCorsAttribute("*", "*", "*");
+            httpConfig.EnableCors(corsAttr);
 
             var jsonFormatter = httpConfig.Formatters.JsonFormatter;
             jsonFormatter.SerializerSettings = new JsonSerializerSettings
@@ -38,7 +41,7 @@ namespace MyWebServer.App_Start
 
             ConfigureWebApi(httpConfig);
 
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
+            //app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             app.UseWebApi(httpConfig);
 

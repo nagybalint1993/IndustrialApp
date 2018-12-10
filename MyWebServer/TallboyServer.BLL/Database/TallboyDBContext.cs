@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IndustrialAppServer.Models;
 using IndustrialAppServer.BLL.Models;
+using TallboyServer.BLL.Models;
 
 namespace IndustrialAppServer.BLL.Database
 {
@@ -44,6 +45,8 @@ namespace IndustrialAppServer.BLL.Database
         public DbSet<IndustrialAppServer.Models.Type> Types { get; set; }
 
         public DbSet<Video> Videos { get; set; }
+
+        public DbSet<Image> Images { get; set; }
 
     }
 }

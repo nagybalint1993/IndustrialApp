@@ -149,6 +149,7 @@
     <Compile Include="Managers\ContainerManager.cs" />
     <Compile Include="Managers\ContainerPartContentManager.cs" />
     <Compile Include="Managers\ContainerPartManager.cs" />
+    <Compile Include="Managers\ImageManager.cs" />
     <Compile Include="Managers\TaskElementManager.cs" />
     <Compile Include="Managers\TaskInstanceManager.cs" />
     <Compile Include="Managers\TaskManager.cs" />
@@ -170,11 +171,28 @@
     <Compile Include="Migrations\201812021505008_azureInit2.Designer.cs">
       <DependentUpon>201812021505008_azureInit2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812101605394_Initial.cs" />
+    <Compile Include="Migrations\201812101605394_Initial.Designer.cs">
+      <DependentUpon>201812101605394_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101610567_container-changed.cs" />
+    <Compile Include="Migrations\201812101610567_container-changed.Designer.cs">
+      <DependentUpon>201812101610567_container-changed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101658196_new.cs" />
+    <Compile Include="Migrations\201812101658196_new.Designer.cs">
+      <DependentUpon>201812101658196_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812102129484_new2.cs" />
+    <Compile Include="Migrations\201812102129484_new2.Designer.cs">
+      <DependentUpon>201812102129484_new2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Container.cs" />
     <Compile Include="Models\ContainerPart.cs" />
     <Compile Include="Models\ContainerPartContent.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\TaskElement.cs" />
@@ -195,6 +213,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812021505008_azureInit2.resx">
       <DependentUpon>201812021505008_azureInit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101605394_Initial.resx">
+      <DependentUpon>201812101605394_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101610567_container-changed.resx">
+      <DependentUpon>201812101610567_container-changed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101658196_new.resx">
+      <DependentUpon>201812101658196_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812102129484_new2.resx">
+      <DependentUpon>201812102129484_new2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

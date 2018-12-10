@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Net.Http;
 
 namespace HelperProject
 {
@@ -13,17 +14,29 @@ namespace HelperProject
     {
         static void Main(string[] args)
         {
-            TaskProvider taskProvider = new TaskProvider("task/");
-            var x= taskProvider.GetListAsync(ListTasks).Result;
+            new Test().getContainers();
+
+            Console.ReadLine();
         }
 
 
+    }
 
-        public static void ListTasks(List<Task> tasks)
+    public class Test
+    {
+        public async void getContainers()
         {
-            foreach(Task t in tasks)
+            AppProvider<Container> appProvider = new AppProvider<Container>("container");
+
+            List<Container> list = await appProvider.GetListAsync(printContainers);
+            printContainers(list);
+        }
+
+        public void printContainers(List<Container> list)
+        {
+            foreach (Container c in list)
             {
-                Debug.WriteLine(t.Name);
+                Console.WriteLine(c.Name);
             }
         }
     }

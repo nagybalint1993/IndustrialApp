@@ -21,6 +21,6 @@ export class ContainerService extends AppService<Container>{
   postImage(image):Observable<any>{
     const formData: FormData = new FormData();
     formData.append('Image',image);
-    return this.http.post(this.config.apiUrl+ "test/", formData);
+    return this.http.post(this.config.apiUrl+ "image/", formData);
   }
 }

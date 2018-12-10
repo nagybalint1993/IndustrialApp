@@ -11,6 +11,7 @@ using System.Web.Http;
 using IndustrialAppServer.Models;
 using IndustrialAppServer.BLL.DTO;
 using IndustrialAppServer.BLL.Managers;
+using IndustrialAppServer.BLL.Models;
 
 namespace MyWebServer.Controllers
 {
@@ -57,12 +58,16 @@ namespace MyWebServer.Controllers
         [HttpPost]
         public HttpResponseMessage postVideo()
         {
-            var file = HttpContext.Current.Request.Files.Count > 0 ? HttpContext.Current.Request.Files[0] : null;
+            var file = HttpContext.Current.Request.Files.Count > 0 ? 
+                HttpContext.Current.Request.Files[0] : null;
             string filename = Path.GetFileName(file.FileName);
-            file.SaveAs(System.Web.HttpContext.Current.Server.MapPath("/Videos/"+filename   ));
-            IndustrialAppServer.BLL.Models.Video video = new VideoManager().AddVideo(filename);
+            file.SaveAs(System.Web.HttpContext.Current.Server.MapPath(
+                "/Videos/"+filename));
+            IndustrialAppServer.BLL.Models.Video video =
+                new VideoManager().AddVideo(filename);
 
-            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, video.url);
+            HttpResponseMessage response = Request.CreateResponse(
+                HttpStatusCode.OK, video.url);
             return response;
         }
 

@@ -25,8 +25,6 @@ export abstract class AppService<T extends Resource> {
   }
 
   put(data:T): Observable<any>{
-    console.log("put:" + data.id);
-    console.log("URL:" + this.baseURL + this.serviceURL+ data.id );
     return this.http.put<T>(this.baseURL + this.serviceURL+ data.id , data, httpoption );
   }
 

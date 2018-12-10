@@ -13,6 +13,7 @@ namespace IndustrialAppServer.BLL.Models
         [Required]
         public string Name { get; set; }
 
+        [Key]
         [Required]
         public string QRstring { get; set; }
     }

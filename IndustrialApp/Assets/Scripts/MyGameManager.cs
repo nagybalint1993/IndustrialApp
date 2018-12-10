@@ -74,22 +74,19 @@ public class MyGameManager : NetworkBehaviour {
         qrScanDialog.SetActive(false);
         initPCBparts();
 
-        videoScreen = GameObject.Find("Videoscreen");
-        videoPlayer= videoScreen.AddComponent<UnityEngine.Video.VideoPlayer>();
+        //videoScreen = GameObject.Find("Videoscreen");
+        //videoPlayer= videoScreen.AddComponent<UnityEngine.Video.VideoPlayer>();
 
-        videoPlayer.url = "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4";
-        videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
+        //videoPlayer.url = "https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4";
+        //videoPlayer.renderMode = VideoRenderMode.MaterialOverride;
 
 
         SetWorldObjectsActive(false);
 
         VuforiaRuntime.Instance.InitVuforia();
-
-
+        StartVuforia();
 
         testcounter = 0;
-
-
     }
 
     public void StartVuforia()
@@ -359,13 +356,13 @@ public class MyGameManager : NetworkBehaviour {
         if (targetName == "20ede1ea-44bc-4cc9-9000-94bdc66cc5b0")
         {
             GameObject imageTargetObject = GameObject.Find(targetName);
-            if ((parent.transform.position - imageTargetObject.transform.position).magnitude > 0.3)
-            {
-                parent.transform.parent = imageTargetObject.transform;
-                parent.transform.localPosition = Vector3.zero;
-                parent.transform.localRotation = Quaternion.identity;
-                parent.transform.localScale = Vector3.one;
-            }
+if ((parent.transform.position - imageTargetObject.transform.position).magnitude > 0.3)
+{
+    parent.transform.parent = imageTargetObject.transform;
+    parent.transform.localPosition = Vector3.zero;
+    parent.transform.localRotation = Quaternion.identity;
+    parent.transform.localScale = Vector3.one;
+}
 
         }
     }

@@ -13,7 +13,7 @@
       <input  type="text"  class="form-control" #idTF [(ngModel)]="identity">
   </div>
   <div class="mb-4">
-      <span class="input-group-text mb-4">Image target:</span>
+      <span class="input-group-text mb-4">QR code:</span>
       <qrcode #QRCode [qrdata]="identity" [size]="256" [level]="'M'" allowEmptyString="true"></qrcode>    
   </div>
   <button type="button" class="btn btn-primary" (click)="onAddButtonPressed(nameTF.value,idTF.value)" >

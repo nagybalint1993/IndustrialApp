@@ -1,5 +1,5 @@
 export class AppConfig {
-    public readonly apiUrl = 'https://industrialapp.azurewebsites.net/api/';
+    public readonly apiUrl = 'http://localhost:49184/api/';
 
     public readonly typesEndpoint = 'types/';
 

@@ -13,5 +13,7 @@ namespace IndustrialAppServer.Models
 
         public string  Description { get; set; }
 
+        public string UUID { get; set; }
+
     }
 }

@@ -35,7 +35,6 @@ namespace IndustrialAppServer
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
-                //constraints: new { id = @"^[0-9]+$" }
             );
 
             //config.Routes.MapHttpRoute(
